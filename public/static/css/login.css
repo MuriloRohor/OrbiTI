@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+body {
+    margin: 0;
+}
+
+.main-login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A038B1;
+    width: 75vw;
+    height: 100vh;
+}
+
+.right-login {
+    background-color: #432548;
+    width: 25vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-login .card-login{
+    background-color: #432548;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-login h1 {
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+}
+
+.right-login a{
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    font-size: 9px;
+    margin: 0;
+}
+
+
+.textfield input{
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgba(255, 235, 205, 0);
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 4px;
+    color: white;
+    margin-bottom: 7px;
+    
+}
+
+.btn-login{
+    width: 210px;
+    height: 30px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #A038B1;
+    color: #ffffff;
+    border: 0;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: transform 0.1s;
+    
+}
+
+button:active {
+    background-color: #5f3266;
+    transform: translateY(-7px);
+    transition: transform 1s;
+    
+}
+
+.textfield input:focus {
+    outline: none;
+    border-color: #ffffff; 
+    box-shadow: 0 0 5px #ffffff; 
+}
