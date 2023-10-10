@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OrbiTI</title>
+    <title>OrI</title>
 </head>
+
 <body>
-    {% block content %}<!-- Conteúdo Renderizado aqui -->{% endblock %}
-    {% include 'components/menu.html' %}
+    <div class="left-side">
+        {% block content %}<!-- Conteúdo Renderizado aqui -->{% endblock %}
+    </div>
+    <div class="right-side">
+        {% include 'components/navbar.html' %}
+    </div>
 </body>
+
 </html>

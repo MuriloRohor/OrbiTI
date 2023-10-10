@@ -16,4 +16,4 @@ def login_page(request: Request):
 
 @router_page.get('/menu', response_class=HTMLResponse)
 def menu_page(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse("menu-main.html", {"request": request})
