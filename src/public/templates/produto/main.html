@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/navbar.css">
     <link rel="stylesheet" href="static/css/layout.css">
-    <link rel="stylesheet" href="static/css/menu/main.css">
+    <link rel="stylesheet" href="static/css/produto/main.css">
     <title>OrbiTI</title>
 </head>
 
 <body>
     <main>
         <div class="left-side">
-            <button class="btn-1">Adicionar Produto</button>
-            <button class="btn-2">Tranferência Estoque</button>
-            <button class="btn-3">Usuário</button>
+            <button class="btn-1">Cadastrar</button>
+            <button class="btn-2">Editar</button>
+            <button class="btn-3">Excluir</button>
+            <button class="btn-4">Listar</button>
         </div>
-        {% set current_page = "menu" %}
+        {% set current_page = "produto" %}
         <div class="navbar">
             {% include 'components/navbar.html' %}
         </div>

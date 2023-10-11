@@ -8,8 +8,8 @@
     <a href=""><img src="static\img\navbar\icon_more.svg" alt=""></a>
 </div>
 <ul class="ul-t">
-    <li><a href=""><img src="static/img/navbar/icon_menu.svg" alt=""><p>Menu</p></a></li>
-    <li><a href=""><img src="static/img/navbar/icon_produto.svg" alt=""><p>Produto</p></a></li>
+    <li><a href="/menu" {% if current_page == "menu" %}class="active"{% endif %}><img src="static/img/navbar/icon_menu.svg" alt=""><p>Menu</p></a></li>
+    <li><a href="/produto" {% if current_page == "produto" %}class="active"{% endif %}><img src="static/img/navbar/icon_produto.svg" alt=""><p>Produto</p></a></li>
     <li><a href=""><img src="static/img/navbar/icon_estoque.svg" alt=""><p>Estoque</p></a></li>
     <li><a href=""><img src="static/img/navbar/icon_solicitacoes.svg" alt=""><p>Solicitações</p></a></li>
     <li><a href=""><img src="static/img/navbar/icon_relatorio.svg" alt=""><p>Relatório</p></a></li>

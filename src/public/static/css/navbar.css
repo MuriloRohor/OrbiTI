@@ -102,3 +102,10 @@ hr {
 .ul-b {
     align-self: center;
 }
+
+.navbar ul li a.active, 
+.navbar ul li a.active:hover {
+    background-color: #BA68C8;
+    transition: none;
+    transform: none;
+}

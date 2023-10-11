@@ -17,3 +17,7 @@ def login_page(request: Request):
 @router_page.get('/menu', response_class=HTMLResponse)
 def menu_main(request: Request):
     return templates.TemplateResponse("menu/main.html", {"request": request})
+
+@router_page.get('/produto', response_class=HTMLResponse)
+def produto_main(request: Request):
+    return templates.TemplateResponse("produto/main.html", {"request": request})
