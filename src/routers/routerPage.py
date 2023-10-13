@@ -21,3 +21,7 @@ def menu_main(request: Request):
 @router_page.get('/produto', response_class=HTMLResponse)
 def produto_main(request: Request):
     return templates.TemplateResponse("produto/main.html", {"request": request})
+
+@router_page.get('/estoque', response_class=HTMLResponse)
+def estoque_main(request:Request):
+    return templates.TemplateResponse('estoque/main.html', {"request": request})

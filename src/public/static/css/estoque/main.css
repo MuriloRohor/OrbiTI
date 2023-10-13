@@ -1,0 +1,57 @@
+.left-side {
+    background-color: whitesmoke;
+    grid-area: left-side;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-template-areas:  "a b c d";
+    height: 88vh;
+    padding: 3%;
+
+    
+    
+    
+}
+
+button{
+    width: 90%;
+    height: 10%;
+    align-self: top;
+    justify-self: center;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    border: 0;
+    border-radius: 5px;
+    filter: drop-shadow(5px 5px 0px #443e46);
+    transition: 0.5s;
+
+
+}
+
+button:hover{
+    color:black;
+    background-color: gray;
+    transition: 0.5s;
+}
+
+button:active{
+    transform: translate(15px, 15px);
+}
+.btn-1{ 
+    grid-area: a;
+    
+}
+
+.btn-2{
+    grid-area: b;
+    
+}
+
+.btn-3{
+    grid-area: c;
+    
+}
+
+.btn-4{
+    grid-area: d;
+}
