@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/navbar.css">
+    <link rel="stylesheet" href="static/css/layout.css">
+    <link rel="stylesheet" href="static/css/menu/crud.css">
+    <title>OrbiTI</title>
+</head>
+
+<body>
+    <main>
+        <div class="left-side">
+            <div class="container">
+                <header>
+                    <h1 class="titulo">Cadastrar Produto</h1>
+                    <hr>
+                </header>
+                <section>
+                    <div>
+                        <form action="">
+                            <label for="nome">Nome</label>
+                            <br>
+                            <input type="text" name="nome" id="nome" placeholder="Nome do produto"><br>
+
+                            <label for="marca">Marca</label>
+                            <br>
+                            <input type="text" name="marca" id="marca" placeholder="Marca do produto"><br>
+
+                            <label for="categoria">Categoria</label>
+                            <br>
+                            <input type="text" name="categoria" id="categoria" placeholder="Categoria do produto">
+
+                            <label for="desc">Descrição</label>
+                            <br>
+                            <input type="text" name="desc" id="desc" placeholder="Descrição do produto">
+                        </form>
+                        <img src="static/img/forms/boxes.png" alt="">
+                    </div>
+                </section>
+                <footer>
+                    <div>
+                        <button class="btn-confirm">Confirmar</button>
+                        <button class="btn-back"><a href="/menu">Voltar</a></button>
+                    </div>
+
+                </footer>
+            </div>
+
+        </div>
+        {% set current_page = "menu" %}
+        <div class="navbar">
+            {% include 'components/navbar.html' %}
+        </div>
+    </main>
+</body>
+
+</html>
