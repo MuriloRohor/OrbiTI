@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/navbar.css">
+    <link rel="stylesheet" href="static/css/layout.css">
+    <link rel="stylesheet" href="static/css/menu/usuario.css">
+    <title>OrbiTI</title>
+</head>
+
+<body>
+    <main>
+        <div class="left-side">
+            <div class="container">
+                <header>
+                    <h1 class="titulo">Usuário</h1>
+                    <hr>
+                </header>
+                <section>
+                    <div>
+                        <form action="">
+                            <label for="nome">Nome</label>
+                            <br>
+                            <input type="text" name="nome" id="nome" placeholder="Nome do usuário"><br>
+
+                            <label for="email">Email</label>
+                            <br>
+                            <input type="text" name="email" id="email" placeholder="Email do usuário"><br>
+
+                            <label for="telefone">Telefone</label>
+                            <br>
+                            <input type="text" name="telefone" id="telefone" placeholder="( )_____ - ____"><br>
+
+                            <label for="senha">Senha</label>
+                            <br>
+                            <input type="password" name="senha" id="senha" placeholder="Crie uma senha forte"><br>
+
+                            <label for="confsenha">Confirmar Senha</label>
+                            <br>
+                            <input type="password" name="confsenha" id="confsenha" placeholder="Confirme a senha">
+                        </form>
+                        <img src="static/img/forms/user.png" alt="">
+                    </div>
+                </section>
+                <footer>
+                    <div>
+                        <button class="btn-confirm">Confirmar</button>
+                        <button class="btn-back"><a href="/menu">Voltar</a></button>
+                    </div>
+
+                </footer>
+            </div>
+
+        </div>
+        {% set current_page = "menu" %}
+        <div class="navbar">
+            {% include 'components/navbar.html' %}
+        </div>
+    </main>
+</body>
+
+</html>

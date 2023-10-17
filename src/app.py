@@ -6,7 +6,7 @@ import uvicorn
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="public/static"), name="static")
+app.mount("/static", StaticFiles(directory="./src/public/static"), name="static")
 
 app.include_router(router_page)
 

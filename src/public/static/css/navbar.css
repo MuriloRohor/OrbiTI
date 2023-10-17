@@ -32,6 +32,7 @@
     font-size: 13px;
     justify-self: center;
     align-self: center;
+    color: white;
 }
 
 .navbar .profile a {
@@ -82,7 +83,7 @@
     grid-area: left-side;
 }
 
-hr {
+.hr-nav {
     border: none; /* Remove bordas padrão */
     border-top: 1px dashed #ccc; /* Define a borda superior como tracejada */
     width: 100%;

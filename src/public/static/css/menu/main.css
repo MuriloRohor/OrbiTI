@@ -42,6 +42,13 @@ button:active{
     
 }
 
+b a {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+}
+
 .btn-2{
     grid-area: b;
     

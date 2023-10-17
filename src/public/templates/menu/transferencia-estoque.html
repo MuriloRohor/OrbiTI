@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/navbar.css">
+    <link rel="stylesheet" href="static/css/layout.css">
+    <link rel="stylesheet" href="static/css/menu/transferencia-estoque.css">
+    <title>OrbiTI</title>
+</head>
+
+<body>
+    <main>
+        <div class="left-side">
+            <div class="container">
+                <header>
+                    <h1 class="titulo">Trânsferencia Estoque</h1>
+                    <hr>
+                </header>
+                <section>
+                    <div>
+                        <form action="">
+                            <label for="produto">Produto</label>
+                            <br>
+                            <input type="text" name="produto" id="produto" placeholder="Digite o Id do produto"><br>
+
+                            <label for="quantidade">Quantidade</label>
+                            <br>
+                            <input type="text" name="quantidade" id="quantidade" placeholder="Quantidade Produto"><br>
+
+                            <label for="saida">Estoque Saída</label>
+                            <br>
+                            <input type="text" name="saida" id="saida" placeholder="Estoque de saída do produto"><br>
+
+                            <label for="entrada">Estoque Entrada</label>
+                            <br>
+                            <input type="text" name="entrada" id="entrada" placeholder="Estoque de entrada do produto">
+                        </form>
+                        <img src="static/img/forms/transfer.png" alt="">
+                    </div>
+                </section>
+                <footer>
+                    <div>
+                        <button class="btn-confirm">Confirmar</button>
+                        <button class="btn-back"><a href="/menu">Voltar</a></button>
+                    </div>
+
+                </footer>
+            </div>
+
+        </div>
+        {% set current_page = "menu" %}
+        <div class="navbar">
+            {% include 'components/navbar.html' %}
+        </div>
+    </main>
+</body>
+
+</html>
