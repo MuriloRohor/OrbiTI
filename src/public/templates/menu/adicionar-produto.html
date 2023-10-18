@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/navbar.css">
-    <link rel="stylesheet" href="static/css/layout.css">
-    <link rel="stylesheet" href="static/css/menu/adicionar-produto.css">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/menu/adicionar-produto.css') }}">
     <title>OrbiTI</title>
 </head>
 
@@ -33,7 +33,7 @@
                             <br>
                             <input type="text" name="quantidade" id="quantidade" placeholder="Quantidade do produto">
                         </form>
-                        <img src="static/img/forms/boxes.png" alt="">
+                        <img src="{{ url_for('static', path='/img/forms/boxes.png') }}" alt="">
                     </div>
                 </section>
                 <footer>

@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/navbar.css">
-    <link rel="stylesheet" href="static/css/layout.css">
-    <link rel="stylesheet" href="static/css/menu/main.css">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/menu/main.css') }}">
     <title>OrbiTI</title>
 </head>
 
 <body>
     <main>
         <div class="left-side">
-            <a href="/adicionar-produto"><button class="btn-1">Adicionar Produto</button></a>
-            <a href="/transferencia-estoque"><button class="btn-2">Tranferência Estoque</button></a>
-            <a href="/usuario"><button class="btn-3">Usuário</button></a>
+            <a class="btn-1 button" href="adicionar-produto">Adicionar Produto</a>
+            <a class="btn-2 button" href="transferencia-estoque">Tranferência Estoque</a>
+            <a class="btn-3 button" href="usuario">Usuário</a>
         </div>
         {% set current_page = "menu" %}
         <div class="navbar">

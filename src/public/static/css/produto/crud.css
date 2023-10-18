@@ -12,6 +12,10 @@ header hr {
     border-radius: 5px;
 }
 
+header .btn-header{
+    display: flex;
+}
+
 section > div{
     display: flex;
     justify-content: space-between;

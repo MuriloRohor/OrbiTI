@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/navbar.css">
-    <link rel="stylesheet" href="static/css/layout.css">
-    <link rel="stylesheet" href="static/css/menu/usuario.css">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/menu/usuario.css') }}">
     <title>OrbiTI</title>
 </head>
 
@@ -41,7 +41,7 @@
                             <br>
                             <input type="password" name="confsenha" id="confsenha" placeholder="Confirme a senha">
                         </form>
-                        <img src="static/img/forms/user.png" alt="">
+                        <img src="{{ url_for('static', path='/img/forms/user.png') }}" alt="">
                     </div>
                 </section>
                 <footer>
