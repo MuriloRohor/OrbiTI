@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/navbar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/layout.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='css/menu/crud.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/crud.css') }}">
     <title>OrbiTI</title>
 </head>
 
@@ -31,19 +31,18 @@
 
                             <label for="categoria">Categoria</label>
                             <br>
-                            <input type="text" name="categoria" id="categoria" placeholder="Categoria do produto">
+                            <input type="text" name="categoria" id="categoria" placeholder="Categoria do produto"><br>
 
                             <label for="desc">Descrição</label>
                             <br>
                             <input type="text" name="desc" id="desc" placeholder="Descrição do produto">
                         </form>
-                        <img src="static/img/forms/boxes.png" alt="">
                     </div>
                 </section>
                 <footer>
                     <div>
                         <button class="btn-confirm">Confirmar</button>
-                        <button class="btn-back"><a href="/menu">Voltar</a></button>
+                        <button class="btn-back"><a href="/produto">Voltar</a></button>
                     </div>
 
                 </footer>

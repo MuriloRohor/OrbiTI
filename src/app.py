@@ -17,4 +17,4 @@ app.include_router(router_produto, prefix="/produto")
 app.include_router(router_estoque, prefix="/estoque")
 
 if __name__ == "__main__":
-    uvicorn.run(app="app:app", host="localhost", port=8000, reload=True)
+    uvicorn.run(app="app:app", host="localhost", port=8000)
