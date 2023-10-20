@@ -3,9 +3,9 @@ const ctx = document.getElementById('graph1');
 new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ['Estoque', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    labels: ['São Paulo', 'Rio de Janeiro', 'Espirito Santo', 'Minas Gerais', 'Bahia', 'Goías'],
     datasets: [{
-      label: 'Serviços de Sla',
+      label: 'Valor total dos Itens de Estoque R$',
       backgroundColor: [
         'rgba(90, 128, 185,1)',
         'rgba(38, 115, 170,1)',
@@ -22,7 +22,7 @@ new Chart(ctx, {
         'rgba(149, 165, 166, 1)',
         'rgba(127, 140, 141, 1)'
       ],
-      data: [12, 19, 3, 5, 2, 3],
+      data: [12000, 19000, 9000, 11000, 8000, 30000],
     }]
   },
   options: {
