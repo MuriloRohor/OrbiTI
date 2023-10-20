@@ -3,13 +3,13 @@
     grid-area: left-side;
     display: grid;
     grid-template-columns: 2fr 2fr 2fr 2fr;
-    grid-template-areas:  "a b c d";
+    grid-template-areas: "a b c d";
     height: 88vh;
     padding: 3%;
 
-    
-    
-    
+
+
+
 }
 
 .button {

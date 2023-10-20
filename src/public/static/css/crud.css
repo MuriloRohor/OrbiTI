@@ -49,9 +49,12 @@ section > div > form > input:focus {
     outline: none;
 }
 
+
+
 footer > div {
     display: flex;
     justify-content: center;
+    
 
 }
 

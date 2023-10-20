@@ -9,3 +9,20 @@ router = APIRouter()
 @router.get("/", response_class=HTMLResponse)
 def estoque_main(request:Request):
     return templates.TemplateResponse("estoque/main.html", {"request": request})
+
+@router.get("/cadastrar", response_class=HTMLResponse)
+def estoque_main(request:Request):
+    return templates.TemplateResponse("estoque/cadastrar.html", {"request": request})
+
+@router.get("/editar", response_class=HTMLResponse)
+def estoque_main(request:Request):
+    return templates.TemplateResponse("estoque/editar.html", {"request": request})
+
+@router.get("/excluir", response_class=HTMLResponse)
+def estoque_main(request:Request):
+    return templates.TemplateResponse("estoque/excluir.html", {"request": request})
+
+@router.get("/listar", response_class=HTMLResponse)
+def estoque_main(request:Request):
+    return templates.TemplateResponse("estoque/listar.html", {"request": request})
+
