@@ -13,16 +13,30 @@
 <body>
     <main>
         <div class="left-side">
-            <a class="btn-1 button" href="">Cadastrar</a>
-            <a class="btn-2 button" href="">Editar</a>
-            <a class="btn-3 button" href="">Excluir</a>
-            <a class="btn-4 button" href="">Listar</a>
+            <div>
+                <a href="">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <a href="">4</a>
+            </div>
+            <canvas id="graph1"></canvas>
+            <canvas id="graph2"></canvas>
+            
+            
+            
         </div>
+        
         {% set current_page = "relatorio" %}
         <div class="navbar">
             {% include 'components/navbar.html' %}
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', path='js/relatorio/grafico.js') }}"></script>
+    <script src="{{ url_for('static', path='js/relatorio/grafico2.js') }}"></script>
+
+
+
 </body>
 
 </html>
