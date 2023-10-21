@@ -13,33 +13,24 @@
 <body>
     <main>
         <div class="left-side">
-            <header>
-                <h1 class="titulo">Dashboard Gerais</h1>
-                <hr>
-            </header>
-            <div>
-                <a href="">Estoque</a>
-                <a href="">Produto</a>
-                <a href="">Usuário</a>
+            <div class="container">
+                <header>
+                    <h1 class="titulo">Dashboard Gerais</h1>
+                    <hr>
+                </header>
+                <div>
+                    <a href="estoque">Estoque</a>
+                    <a href="">Produto</a>
+                    <a href="">Usuário</a>
+                </div>
             </div>
-            <canvas id="graph1"></canvas>
-            <canvas id="graph2"></canvas>
-            
-            
-            
         </div>
-        
+
         {% set current_page = "relatorio" %}
         <div class="navbar">
             {% include 'components/navbar.html' %}
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="{{ url_for('static', path='js/relatorio/grafico.js') }}"></script>
-    <script src="{{ url_for('static', path='js/relatorio/grafico2.js') }}"></script>
-
-
-
 </body>
 
 </html>
