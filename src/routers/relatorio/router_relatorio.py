@@ -9,3 +9,7 @@ router = APIRouter()
 @router.get('/', response_class=HTMLResponse)
 def relatorio_main(request: Request):
     return templates.TemplateResponse("relatorio/main.html", {"request": request})
+
+@router.get('/estoque', response_class=HTMLResponse)
+def relatorio_main(request: Request):
+    return templates.TemplateResponse("relatorio/estoque.html", {"request": request})
