@@ -20,4 +20,4 @@ app.include_router(router_estoque, prefix="/estoque")
 app.include_router(router_relatorio, prefix="/relatorio")
 
 if __name__ == "__main__":
-    uvicorn.run(app="app:app", host="localhost", port=8000)
+    uvicorn.run(app="app:app", host="localhost", port=8000, reload=True)

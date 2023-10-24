@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/navbar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/layout.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/menu/usuario.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/menu/usuari.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/menu/teste.css') }}">
     <title>OrbiTI</title>
 </head>
 
@@ -14,12 +15,9 @@
     <main>
         <div class="left-side">
             <div class="container">
-                <header>
-                    <h1 class="titulo">Usuário</h1>
-                    <hr>
-                </header>
+                {% include 'components/header.html' %}
                 <section>
-                    <div>
+                    <div class="form-main">
                         <form action="">
                             <label for="nome">Nome</label>
                             <br>
@@ -43,14 +41,14 @@
                         </form>
                         <img src="{{ url_for('static', path='/img/forms/user.png') }}" alt="">
                     </div>
-                </section>
-                <footer>
-                    <div>
+
+                    <div class="form-btn">
                         <button class="btn-confirm">Confirmar</button>
-                        <button class="btn-back"><a href="/menu">Voltar</a></button>
+                        <a class="btn-back" href="/menu">Voltar</a>
                     </div>
 
-                </footer>
+                </section>
+
             </div>
 
         </div>
