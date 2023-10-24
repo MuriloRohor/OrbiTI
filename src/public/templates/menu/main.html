@@ -13,10 +13,17 @@
 <body>
     <main>
         <div class="left-side">
-            {% include 'components/header.html' %}
-            <a class="btn-1 button" href="adicionar-produto">Adicionar Produto</a>
-            <a class="btn-2 button" href="transferencia-estoque">Tranferência Estoque</a>
-            <a class="btn-3 button" href="usuario">Usuário</a>
+            <div class="container">
+                {% include 'components/header.html' %}
+                <section>
+                    <div class="btn-main">
+                        <a class="" href="adicionar-produto">Adicionar Produto</a>
+                        <a class="" href="transferencia-estoque">Tranferência Estoque</a>
+                        <a class="" href="usuario">Usuário</a>
+                    </div>
+                </section>
+
+            </div>
         </div>
         {% set current_page = "menu" %}
         <div class="navbar">

@@ -11,4 +11,3 @@ main {
     grid-template-columns: 4fr 276px;
     grid-template-areas: "left-side navbar";
 }
-

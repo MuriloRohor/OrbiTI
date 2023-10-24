@@ -3,7 +3,6 @@
     height: 100vh;
     padding-left: 8rem;
     padding-right: 8rem;
-
 }
 
 header {
@@ -31,6 +30,8 @@ section>.form-btn {
     display: flex;
     justify-content: center;
     margin-top: 5rem;
+    gap: 20px;
+    
 }
 
 
@@ -63,11 +64,6 @@ section>.form-main>form>input:focus {
     outline: none;
 }
 
-/*Botões do formulario*/
-section>.form-btn {
-    gap: 20px;
-}
-
 /*Defindo as cores*/
 section>.form-btn>.btn-confirm {
     background-color: black;
@@ -82,7 +78,6 @@ section>.form-btn>.btn-back {
     color: rgb(255, 255, 255);
     justify-content: center;
     align-items: center;
-
 }
 
 /*definindo os tamanhos dos botões*/
@@ -110,5 +105,4 @@ section>.form-btn>.btn-confirm:hover {
         0 0 25px #080808,
         0 0 30px #000000,
         0 0 35px #070707;
-
 }

@@ -80,6 +80,7 @@
 }
 
 .left-side{
+    background-color: whitesmoke;
     grid-area: left-side;
     height: 100vh;
 }
