@@ -8,7 +8,8 @@ router = APIRouter()
 
 @router.get("/", response_class=HTMLResponse)
 def estoque_main(request:Request):
-    return templates.TemplateResponse("estoque/main.html", {"request": request})
+    titulo_page = "Estoque"
+    return templates.TemplateResponse("estoque/main.html", {"request": request, "titulo": titulo_page})
 
 @router.get("/cadastrar", response_class=HTMLResponse)
 def estoque_main(request:Request):

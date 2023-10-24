@@ -1,27 +1,45 @@
-.left-side {
-    background-color: whitesmoke;
-    grid-area: left-side;
-    display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr;
-    grid-template-areas: "a b c d";
-    height: 88vh;
-    padding: 3%;
+/* Definindo tamanho do layot e posicionando os elementos */
+.container {
+    height: 100vh;
+    padding-left: 8rem;
+    padding-right: 8rem;
+}
 
+header {
+    height: 10vh
+}
 
-
+section {
+    height: 90vh;
 
 }
 
-.button {
-    display: inline-flex;
-    /* Alterado de inline-block para inline-flex */
-    align-items: center;
+section>.btn-main {
+    display: flex;
     justify-content: center;
-    
-    width: 90%;
-    height: 10%;
-    align-self: top;
-    justify-self: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+/* Estilizações dos elementos */
+
+/*Header*/
+header hr {
+    border: 1px solid #BA68C8;
+    border-radius: 5px;
+}
+
+
+/*Definindo tamanho dos botões, alinhando texto do link, e também utilizando o nowrap para não ter quebra de linha do texto*/
+section>.btn-main a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
     background-color: black;
     color: white;
     font-size: 18px;
@@ -30,35 +48,18 @@
     filter: drop-shadow(5px 5px 0px #443e46);
     text-decoration: none;
     transition: 0.5s;
-    
-
+    width: 14rem;
+    height: 3rem;
 }
 
-.button:hover {
+/*Animação de trocar a cor ao passar o mouse em cima do botão*/
+section>.btn-main a:hover {
     color: black;
     background-color: gray;
     transition: 0.5s;
 }
 
-.button:active {
+/*Animação de movimento ao clicar no botão*/
+section>.btn-main :active {
     transform: translate(15px, 15px);
-}
-
-.btn-1 {
-    grid-area: a;
-
-}
-
-.btn-2 {
-    grid-area: b;
-
-}
-
-.btn-3 {
-    grid-area: c;
-
-}
-
-.btn-4 {
-    grid-area: d;
 }

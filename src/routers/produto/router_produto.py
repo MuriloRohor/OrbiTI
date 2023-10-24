@@ -8,20 +8,25 @@ router = APIRouter()
 
 @router.get("/", response_class=HTMLResponse)
 def produto_main(request: Request):
-    return templates.TemplateResponse("produto/main.html", {"request": request})
+    titulo_page = "Produto"
+    return templates.TemplateResponse("produto/main.html", {"request": request, "titulo": titulo_page})
 
 @router.get('/cadastrar', response_class=HTMLResponse)
 def produto_cadastrar(request: Request):
-    return templates.TemplateResponse("produto/cadastrar.html", {"request": request})
+    titulo_page = "Cadastrar Produto"
+    return templates.TemplateResponse("produto/cadastrar.html", {"request": request, "titulo": titulo_page})
 
 @router.get('/editar', response_class=HTMLResponse)
 def produto_editar(request: Request):
-    return templates.TemplateResponse("produto/editar.html", {"request": request})
+    titulo_page = "Editar Produto"
+    return templates.TemplateResponse("produto/editar.html", {"request": request, "titulo": titulo_page})
 
 @router.get('/excluir', response_class=HTMLResponse)
 def produto_excluir(request: Request):
-    return templates.TemplateResponse("produto/excluir.html", {"request": request})
+    titulo_page = "Excluir Produto"
+    return templates.TemplateResponse("produto/excluir.html", {"request": request, "titulo": titulo_page})
 
 @router.get('/listar', response_class=HTMLResponse)
 def produto_listar(request: Request):
-    return templates.TemplateResponse("produto/listar.html", {"request": request})
+    titulo_page = "Listar Produto"
+    return templates.TemplateResponse("produto/listar.html", {"request": request, "titulo": titulo_page})
