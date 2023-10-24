@@ -16,9 +16,8 @@
     display: inline-flex;
     /* Alterado de inline-block para inline-flex */
     align-items: center;
-    /* Centralização vertical usando flexbox */
     justify-content: center;
-    /* Centralização horizontal usando flexbox */
+    
     width: 90%;
     height: 10%;
     align-self: top;

@@ -1,0 +1,45 @@
+
+
+header {
+    grid-area: header;
+}
+
+header hr {
+
+    border: 1px solid #BA68C8;
+    border-radius: 5px;
+    grid-area: hr;
+}
+
+.container .button a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 90%;
+    height: 10%;
+    align-self: top;
+    justify-self: center;
+    background-color: #000000;
+    color: white;
+    font-size: 18px;
+    border: 0;
+    border-radius: 5px;
+    filter: drop-shadow(5px 5px 0px #443e46);
+    text-decoration: none;
+    margin: 15px;
+    transition: 0.5s;
+    
+}
+
+.btn-1{
+    grid-area: a;
+}
+
+.btn-2{
+    grid-area: b;
+}
+
+.btn-3{
+    grid-area: c;
+}

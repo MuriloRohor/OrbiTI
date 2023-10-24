@@ -4,32 +4,32 @@
     display: grid;
     padding-left: 100px;
     padding-right: 100px;
-    grid-template-rows: 9vh 91vh;
+    grid-template-rows: 15vh 85vh;
     height: 88vh;
-    gap: 15px;
+    
 }
 
 header {
     display: grid;
-    grid-template-rows: 50% 2% 48%;
+    grid-template-rows: 34% 1% 65%;
     grid-template-columns: repeat(6, 1fr);
     grid-template-areas:
         "title title title title title title"
         "hr hr hr hr hr hr"
         "btn-1 btn-2 btn-3 btn-4 btn-5 btn-6";
+    
 
 }
 
 header h1 {
     grid-area: title;
-
 }
 
 header hr {
 
-    border: 1px solid #BA68C8;
-    border-radius: 5px;
-
+    border: .5px solid #BA68C8;
+    border-radius: 3px;
+    background-color: #BA68C8;
     grid-area: hr;
 }
 
@@ -41,8 +41,7 @@ header hr {
     justify-content: center;
     /* Centralização horizontal usando flexbox */
     margin-top: 10px;
-    width: 200px;
-    height: 30px;
+     
     align-self: top;
     justify-self: center;
     background-color: black;

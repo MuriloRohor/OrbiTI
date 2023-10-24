@@ -81,6 +81,7 @@
 
 .left-side{
     grid-area: left-side;
+    height: 100vh;
 }
 
 .hr-nav {
