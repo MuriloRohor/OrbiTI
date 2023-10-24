@@ -16,7 +16,7 @@
             <div class="container">
                 {% include 'components/header.html' %}
                 <section>
-                    <div>
+                    <div class="form-main">
                         <form action="">
                             <label for="produto">Produto</label>
                             <br>
@@ -36,14 +36,12 @@
                         </form>
                         <img src="{{ url_for('static', path='/img/forms/transfer.png') }}" alt="">
                     </div>
-                </section>
-                <footer>
-                    <div>
+                    <div class="form-btn">
                         <button class="btn-confirm">Confirmar</button>
-                        <button class="btn-back"><a href="/menu">Voltar</a></button>
+                        <a class="btn-back" href="/menu">Voltar</a>
                     </div>
+                </section>
 
-                </footer>
             </div>
 
         </div>

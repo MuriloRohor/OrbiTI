@@ -1,57 +1,93 @@
+/* Definindo tamanho do layot e posicionando os elementos */
 .container {
-    display: grid;
-    grid-template-rows: 10vh 50vh 40vh;
-    padding-left:  100px;
-    padding-right: 100px;
-    background-color: whitesmoke;
+    height: 100vh;
+    padding-left: 8rem;
+    padding-right: 8rem;
 
 }
 
+header {
+    height: 10vh
+}
+
+section {
+    height: 90vh;
+
+}
+
+section img {
+    width: 250px;
+    height: 250px;
+}
+
+section>.form-main {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+
+}
+
+section>.form-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+
+
+
+
+
+
+/* Estilizações dos elementos */
+
+/*Header*/
 header hr {
     border: 1px solid #BA68C8;
     border-radius: 5px;
 }
 
-section > div{
-    display: flex;
-    justify-content: space-between;
-    font-size: 20px;
-}
-section > div > img{
-    width: 250px;
-    height: 250px;
-}
-
-
-
-section > div > form > input{
+/*Input dos Formulario*/
+section>.form-main>form>input {
     width: 30rem;
     height: 2rem;
-}
-
-section > div > form > input{
-    margin-bottom: 10px;
-}
-
-section > div > form > input {
     padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     transition: box-shadow 0.3s ease-in-out;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* horizontal, vertical, blur, color */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2)
 }
 
-section > div > form > input:focus {
+section>.form-main>form>input:focus {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
     outline: none;
 }
 
-footer > div {
+/*Botões do formulario*/
+section>.form-btn {
+    gap: 20px;
+}
+
+/*Defindo as cores*/
+section>.form-btn>.btn-confirm {
+    background-color: black;
+    color: white;
+}
+
+section>.form-btn>.btn-back {
     display: flex;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
     justify-content: center;
+    align-items: center;
 
 }
 
-footer > div > button{
+/*definindo os tamanhos dos botões*/
+section>.form-btn>.btn-back,
+section>.form-btn>.btn-confirm {
     border: none;
     margin: 5px;
     width: 9rem;
@@ -60,33 +96,19 @@ footer > div > button{
     transition: .1s;
 }
 
-footer > div > button:hover{
+/*Aplica o efeito ao passar o mouse em cima*/
+section>.form-btn>.btn-back:hover,
+section>.form-btn>.btn-confirm:hover {
     transition: .1s;
     transform: translate(1px, 3px);
     color: #f8f8f8;
-    text-shadow: 
-        0 0 5px #fdfdfd, 
-        0 0 10px #fdffff, 
-        0 0 15px #030303, 
-        0 0 20px #000000, 
-        0 0 25px #080808, 
-        0 0 30px #000000, 
+    text-shadow:
+        0 0 5px #fdfdfd,
+        0 0 10px #fdffff,
+        0 0 15px #030303,
+        0 0 20px #000000,
+        0 0 25px #080808,
+        0 0 30px #000000,
         0 0 35px #070707;
-}
 
-footer > div > .btn-confirm {
-    background-color: black;
-    color: white;
-}
-
-footer > div > .btn-back {
-    background-color: red;
-    color: white;
-    
-    
-}
-
-footer > div > .btn-back > a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
 }
