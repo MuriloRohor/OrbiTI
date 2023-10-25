@@ -14,12 +14,9 @@
     <main>
         <div class="left-side">
             <div class="container">
-                <header>
-                    <h1 class="titulo">Exclusão de Estoques</h1>
-                    <hr>
-                </header>
+                {% include 'components/header.html' %}
                 <section>
-                    <div>
+                    <div class="form-main">
                         <form action="">
                             <label for="nome">ID estoque</label>
                             <br>
@@ -44,14 +41,12 @@
                     </div>
                 </section>
                 <footer>
-                    <div>
+                    <div class="form-btn">
                         <button class="btn-confirm">Confirmar</button>
-                        <button class="btn-back"><a href="/produto">Voltar</a></button>
+                        <a class="btn-back" href="/produto">Voltar</a>
                     </div>
-
                 </footer>
             </div>
-
         </div>
         {% set current_page = "estoque" %}
         <div class="navbar">
