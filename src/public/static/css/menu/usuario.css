@@ -55,7 +55,7 @@ section>.form-main>form>input {
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2)
 }
 
@@ -108,7 +108,7 @@ section>.form-btn>.btn-confirm:hover {
 }
 
 
-/*Media query para os inputs e img - 720px*/
+/*Media query para os inputs, img e botões - 720px*/
 @media (max-height: 720px) {
     section>.form-main>form>input {
         width: 20rem; 
@@ -117,5 +117,12 @@ section>.form-btn>.btn-confirm:hover {
     section img {
         width: 180px;
         height: 180px;
+    }
+    section>.form-btn>.btn-back,
+    section>.form-btn>.btn-confirm {
+        width: 7rem;
+        height: 2rem;
+        font-size: 14px;
+        transition: .1s;
     }
 }

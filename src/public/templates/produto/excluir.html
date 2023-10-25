@@ -14,12 +14,9 @@
     <main>
         <div class="left-side">
             <div class="container">
-                <header>
-                    <h1 class="titulo">Exclusão Produto</h1>
-                    <hr>
-                </header>
+                {% include 'components/header.html' %}
                 <section>
-                    <div>
+                    <div class="form-main">
                         <form action="">
                             <label for="nome">ID produto</label>
                             <br>
@@ -42,16 +39,12 @@
                             <input type="text" name="desc" id="desc" placeholder="Descrição do produto">
                         </form>
                     </div>
-                </section>
-                <footer>
-                    <div>
+                    <div class="form-btn">
                         <button class="btn-confirm">Confirmar</button>
-                        <button class="btn-back"><a href="/produto">Voltar</a></button>
+                        <a class="btn-back" href="/produto">Voltar</a>
                     </div>
-
-                </footer>
+                </section>
             </div>
-
         </div>
         {% set current_page = "produto" %}
         <div class="navbar">
