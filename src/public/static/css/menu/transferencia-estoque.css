@@ -1,8 +1,8 @@
-/* Definindo tamanho do layot e posicionando os elementos */
+/*Definindo tamanho do layot e posicionando os elementos*/
 .container {
     height: 100vh;
-    padding-left: 8rem;
-    padding-right: 8rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
 
 }
 
@@ -24,6 +24,8 @@ section>.form-main {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
+    height: 300px;
+   
 
 }
 
@@ -32,6 +34,7 @@ section>.form-btn {
     justify-content: center;
     margin-top: 5rem;
 }
+
 
 
 
@@ -54,7 +57,7 @@ section>.form-main>form>input {
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2)
 }
 
@@ -111,4 +114,16 @@ section>.form-btn>.btn-confirm:hover {
         0 0 30px #000000,
         0 0 35px #070707;
 
+}
+
+/*Media query para os inputs e img - 720px*/
+@media (max-height: 720px) {
+    section>.form-main>form>input {
+        width: 20rem; 
+        height: 1rem;
+    }
+    section img {
+        width: 180px;
+        height: 180px;
+    }
 }

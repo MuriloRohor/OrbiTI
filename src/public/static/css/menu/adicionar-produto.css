@@ -1,8 +1,8 @@
 /* Definindo tamanho do layot e posicionando os elementos */
 .container {
     height: 100vh;
-    padding-left: 8rem;
-    padding-right: 8rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
 
 }
 
@@ -111,4 +111,17 @@ section>.form-btn>.btn-confirm:hover {
         0 0 30px #000000,
         0 0 35px #070707;
 
+}
+
+
+/*Media query para os inputs e img - 720px*/
+@media (max-height: 720px) {
+    section>.form-main>form>input {
+        width: 22rem; 
+        height: 1rem;
+    }
+    section img {
+        width: 200px;
+        height: 200px;
+    }
 }
