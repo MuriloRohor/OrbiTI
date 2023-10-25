@@ -13,46 +13,25 @@
 <body>
     <main>
         <div class="left-side">
-<<<<<<< HEAD
             <div class="container">
-                <header>
-                    <h1 class="titulo">Dashboard Gerais</h1>
-                    <hr>
-                </header>
-                <div class="button">
-                    <a class="btn-1" href="estoque"><span>Estoque</span></a>
-                    <a class="btn-2" href="produto"><span>Produto</span></a>
-                    <a class="btn-3" href="usuario"><span>Usuario</span></a>
-                </div>
-=======
-            <header>
-                <h1 class="titulo">Dashboard Gerais</h1>
-                <hr>
-            </header>
-            <div>
-                <a href="">Estoque</a>
-                <a href="">Produto</a>
-                <a href="">Usuário</a>
->>>>>>> parent of 06e6768 (pagina de seleção de relatorio)
+                {% include 'components/header.html' %}
+                <section>
+                    <div class="btn-main">
+                        <a href="estoque">Estoque</a>
+                        <a href="produto">Produto</a>
+                        <a href="usuario">Usuário</a>
+                    </div>
+                </section>
             </div>
-            <canvas id="graph1"></canvas>
-            <canvas id="graph2"></canvas>
-            
-            
-            
         </div>
-        
         {% set current_page = "relatorio" %}
         <div class="navbar">
             {% include 'components/navbar.html' %}
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="{{ url_for('static', path='js/relatorio/grafico.js') }}"></script>
-    <script src="{{ url_for('static', path='js/relatorio/grafico2.js') }}"></script>
-
-
-
 </body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', path='js/relatorio/grafico.js') }}"></script>
+<script src="{{ url_for('static', path='js/relatorio/grafico2.js') }}"></script>
 
 </html>
