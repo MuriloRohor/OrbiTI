@@ -14,23 +14,22 @@
     <main>
         <div class="left-side">
             <div class="container">
-                <header>
-                    <h1 class="titulo">Dashboard Estoque</h1>
-                    <hr>
-                    <a class="button btn-1" href="">São Paulo</a>
-                    <a class="button btn-2" href="">Rio de Janeiro</a>
-                    <a class="button btn-3" href="">Espirito Santo</a>
-                    <a class="button btn-4" href="">Minas Gerais</a>
-                    <a class="button btn-5" href="">Bahia</a>
-                    <a class="button btn-6" href="">Goías</a>
-
-                </header>
+                {% include 'components/header.html' %}
                 <section>
-                    <div><canvas id="graph1"></canvas></div>
-                    <div><canvas id="graph2"></canvas></div>
-                    <div><canvas id="graph3"></canvas></div>
-                    <div><canvas id="graph4"></canvas></div>
-
+                    <div class="btn-main">
+                        <a href="">São Paulo</a>
+                        <a href="">Rio de Janeiro</a>
+                        <a href="">Espirito Santo</a>
+                        <a href="">Minas Gerais</a>
+                        <a href="">Bahia</a>
+                        <a href="">Goías</a>
+                    </div>
+                    <div class="graph-main">
+                        <div><canvas id="graph1"></canvas></div>
+                        <div><canvas id="graph2"></canvas></div>
+                        <div><canvas id="graph3"></canvas></div>
+                        <div><canvas id="graph4"></canvas></div>
+                    </div>
                 </section>
             </div>
         </div>
@@ -55,3 +54,5 @@
 </body>
 
 </html>
+
+

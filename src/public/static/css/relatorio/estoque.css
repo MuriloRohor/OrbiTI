@@ -1,107 +1,87 @@
+/* Definindo tamanho do layot e posicionando os elementos */
 .container {
-    background-color: whitesmoke;
-    grid-area: left-side;
-    display: grid;
-    padding-left: 100px;
-    padding-right: 100px;
-    grid-template-rows: 15vh 85vh;
-    height: 88vh;
-    
+    height: 100vh;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 
 header {
-    display: grid;
-    grid-template-rows: 34% 1% 65%;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas:
-        "title title title title title title"
-        "hr hr hr hr hr hr"
-        "btn-1 btn-2 btn-3 btn-4 btn-5 btn-6";
+    height: 10vh
+}
+
+section {
+    height: 90vh;
     
-
 }
 
-header h1 {
-    grid-area: title;
-}
-
-header hr {
-
-    border: .5px solid #BA68C8;
-    border-radius: 3px;
-    background-color: #BA68C8;
-    grid-area: hr;
-}
-
-.button {
-    display: inline-flex;
-    /* Alterado de inline-block para inline-flex */
-    align-items: center;
-    /* Centralização vertical usando flexbox */
+section>.btn-main {
+    display: flex;
     justify-content: center;
-    /* Centralização horizontal usando flexbox */
-    margin-top: 10px;
-     
-    align-self: top;
-    justify-self: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+section>.graph-main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px;
+    height: 100%;
+    width: 100%;
+    
+    
+}
+section>.graph-main> div{
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    width: 50%;
+
+}
+
+/* Estilizações dos elementos */
+
+/*Header*/
+header hr {
+    border: 1px solid #BA68C8;
+    border-radius: 5px;
+}
+
+
+/*Definindo tamanho dos botões, alinhando texto do link, e também utilizando o nowrap para não ter quebra de linha do texto*/
+section>.btn-main a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
     background-color: black;
     color: white;
-    font-size: 18px;
+    font-size: 13px;
     border: 0;
     border-radius: 5px;
     filter: drop-shadow(5px 5px 0px #443e46);
     text-decoration: none;
     transition: 0.5s;
+    width: 10rem;
+    height: 1rem;
 }
 
-.button:hover {
+/*Animação de trocar a cor ao passar o mouse em cima do botão*/
+section>.btn-main a:hover {
     color: black;
     background-color: gray;
     transition: 0.5s;
 }
 
-.button:active {
+/*Animação de movimento ao clicar no botão*/
+section>.btn-main :active {
     transform: translate(15px, 15px);
 }
 
-.btn-1 {
-    grid-area: btn-1;
+section>.graph-main{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-.btn-2 {
-    grid-area: btn-2;
-}
 
-.btn-3 {
-    grid-area: btn-3;
-}
 
-.btn-4 {
-    grid-area: btn-4;
-}
-
-.btn-5 {
-    grid-area: btn-5;
-}
-
-.btn-6 {
-    grid-area: btn-6;
-}
-
-section {
-    height: 95%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-    border: 1px solid gainsboro;
-    background-color: rgba(35, 22, 39, 0.156);
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-}
-
-section>div {
-    width: 600px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-}
