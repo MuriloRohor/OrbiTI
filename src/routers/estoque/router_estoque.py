@@ -13,17 +13,21 @@ def estoque_main(request:Request):
 
 @router.get("/cadastrar", response_class=HTMLResponse)
 def estoque_main(request:Request):
-    return templates.TemplateResponse("estoque/cadastrar.html", {"request": request})
+    titulo_page = "Cadastro de Estoque"
+    return templates.TemplateResponse("estoque/cadastrar.html", {"request": request, "titulo": titulo_page})
 
 @router.get("/editar", response_class=HTMLResponse)
 def estoque_main(request:Request):
-    return templates.TemplateResponse("estoque/editar.html", {"request": request})
+    titulo_page = "Editar Estoque"
+    return templates.TemplateResponse("estoque/editar.html", {"request": request, "titulo": titulo_page})
 
 @router.get("/excluir", response_class=HTMLResponse)
 def estoque_main(request:Request):
-    return templates.TemplateResponse("estoque/excluir.html", {"request": request})
+    titulo_page = "Exclusão de Estoque"
+    return templates.TemplateResponse("estoque/excluir.html", {"request": request, "titulo": titulo_page})
 
 @router.get("/listar", response_class=HTMLResponse)
 def estoque_main(request:Request):
-    return templates.TemplateResponse("estoque/listar.html", {"request": request})
+    titulo_page = "Listagem de Estoques"
+    return templates.TemplateResponse("estoque/listar.html", {"request": request, "titulo": titulo_page})
 

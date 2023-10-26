@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/layout.css') }}">
+    <title>OrbiTI</title>
+</head>
+
+<body>
+    <main>
+        <div class="left-side">
+            <div class="container">{% include 'components/header.html' %}
+                <section>
+
+                </section>
+            </div>
+        </div>
+        {% set current_page = "estoque" %}
+        <div class="navbar">
+            {% include 'components/navbar.html' %}
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>
