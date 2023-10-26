@@ -1,0 +1,40 @@
+/* Definindo tamanho do layot e posicionando os elementos */
+.container{
+    height: 100vh;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+header {
+    height: 10vh
+}
+
+section {
+    height: 90vh;
+
+}
+table{
+    width: 100%;
+}
+th{
+    text-align: left;
+    font-size: 1.5rem;
+    padding-right: 1.5rem;
+    
+}
+
+table{
+    border-collapse: separate;
+    border-spacing: 0 1rem;
+}
+
+
+
+
+/* Estilizações dos elementos */
+
+/*Header*/
+header hr {
+    border: 1px solid #BA68C8;
+    border-radius: 5px;
+}

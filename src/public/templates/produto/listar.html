@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/navbar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/listagem.css') }}">
     <title>OrbiTI</title>
 </head>
 
@@ -14,7 +15,151 @@
         <div class="left-side">
             <div class="container">{% include 'components/header.html' %}
                 <section>
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Marca</th>
+                                    <th>Categoria</th>
+                                    <th>Quantidade</th>
+                                    <th>Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>MS116</td>
+                                    <td>Dell</td>
+                                    <td>Mouse</td>
+                                    <td>15</td>
+                                    <td>Mouse óptico Dell - MS116 com fio</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>SSD EVO 860</td>
+                                    <td>Samsung</td>
+                                    <td>Armazenamento</td>
+                                    <td>12</td>
+                                    <td>SSD Samsung EVO 860 de 500GB - SATA III</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>PowerEdge T40</td>
+                                    <td>Dell</td>
+                                    <td>Servidor</td>
+                                    <td>4</td>
+                                    <td>Servidor Torre Dell PowerEdge T40 com Intel Xeon</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Raspberry Pi 4</td>
+                                    <td>Raspberry</td>
+                                    <td>Mini Computador</td>
+                                    <td>15</td>
+                                    <td>Mini Computador Raspberry Pi 4 Model B com 4GB RAM</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Catalyst 2960</td>
+                                    <td>Cisco</td>
+                                    <td>Switch de Rede</td>
+                                    <td>8</td>
+                                    <td>Switch de Rede Cisco Catalyst 2960 com 24 portas</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>FortiGate 60E</td>
+                                    <td>Fortinet</td>
+                                    <td>Firewall</td>
+                                    <td>5</td>
+                                    <td>Firewall Fortinet FortiGate 60E</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>ProLiant DL360</td>
+                                    <td>HP</td>
+                                    <td>Servidor</td>
+                                    <td>3</td>
+                                    <td>Servidor Rack HP ProLiant DL360 Gen10</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>UniFi Dream Machine</td>
+                                    <td>Ubiquiti</td>
+                                    <td>Roteador</td>
+                                    <td>10</td>
+                                    <td>Roteador UniFi Dream Machine All-in-One</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>T5 Portable SSD</td>
+                                    <td>Samsung</td>
+                                    <td>Armazenamento Externo</td>
+                                    <td>20</td>
+                                    <td>SSD Portátil Samsung T5 de 1TB - USB 3.1</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>HyperX Fury 16GB</td>
+                                    <td>Kingston</td>
+                                    <td>Memória RAM</td>
+                                    <td>25</td>
+                                    <td>Memória RAM Kingston HyperX Fury 16GB DDR4</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>ThinkPad E15</td>
+                                    <td>Lenovo</td>
+                                    <td>Notebook</td>
+                                    <td>7</td>
+                                    <td>Notebook Lenovo ThinkPad E15 com Intel Core i5</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>EliteDesk 800 G5</td>
+                                    <td>HP</td>
+                                    <td>Desktop</td>
+                                    <td>6</td>
+                                    <td>Desktop HP EliteDesk 800 G5 Mini PC com Intel Core i7</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>My Cloud EX2 Ultra</td>
+                                    <td>WD</td>
+                                    <td>NAS</td>
+                                    <td>4</td>
+                                    <td>Sistema de Armazenamento em Rede (NAS) WD My Cloud EX2 Ultra de 4TB</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>TS-453D</td>
+                                    <td>QNAP</td>
+                                    <td>NAS</td>
+                                    <td>3</td>
+                                    <td>NAS QNAP TS-453D de 4 Baias com capacidade para expansão de armazenamento</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>OptiPlex 3080</td>
+                                    <td>Dell</td>
+                                    <td>Desktop</td>
+                                    <td>8</td>
+                                    <td>Desktop Dell OptiPlex 3080 com Intel Core i5</td>
+                                </tr>
+                                <tr>
+                                    <td>16</td>
+                                    <td>Archer C6</td>
+                                    <td>TP-Link</td>
+                                    <td>Roteador</td>
+                                    <td>12</td>
+                                    <td>Roteador Wireless TP-Link Archer C6 AC1200 Dual Band</td>
+                                </tr>
 
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
             </div>
         </div>
