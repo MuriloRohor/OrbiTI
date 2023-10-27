@@ -1,5 +1,5 @@
 /* Definindo tamanho do layot e posicionando os elementos */
-.container{
+.container {
     height: 100vh;
     padding-left: 3rem;
     padding-right: 3rem;
@@ -13,17 +13,17 @@ section {
     height: 90vh;
 
 }
-table{
+
+table {
     width: 100%;
 }
-th{
+
+th {
     text-align: left;
-    font-size: 1.5rem;
     padding-right: 1.5rem;
-    
 }
 
-table{
+table {
     border-collapse: separate;
     border-spacing: 0 1rem;
 }
@@ -37,4 +37,9 @@ table{
 header hr {
     border: 1px solid #BA68C8;
     border-radius: 5px;
+}
+
+/*Titulo da tabela*/
+table>thead>tr>th {
+    font-size: 1.5rem;
 }

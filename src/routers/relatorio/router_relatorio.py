@@ -19,9 +19,9 @@ def relatorio_main(request: Request):
 @router.get('/produto', response_class=HTMLResponse)
 def relatorio_main(request: Request):
     titulo_page = "Dashboard Produto"
-    return templates.TemplateResponse("relatorio/estoque.html", {"request": request, "titulo":titulo_page})
+    return templates.TemplateResponse("relatorio/produto.html", {"request": request, "titulo":titulo_page})
 
 @router.get('/usuario', response_class=HTMLResponse)
 def relatorio_main(request: Request):
     titulo_page = "Dashboard Usuario"
-    return templates.TemplateResponse("relatorio/estoque.html", {"request": request, "titulo":titulo_page})
+    return templates.TemplateResponse("relatorio/usuario.html", {"request": request, "titulo":titulo_page})
