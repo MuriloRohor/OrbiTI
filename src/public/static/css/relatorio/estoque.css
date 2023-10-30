@@ -85,4 +85,21 @@ section>.graph-main{
 }
 
 
+/*Media query para botões e layout - 720px*/
+@media (max-height: 800px) {
 
+    section>.btn-main> a {
+        width: 7rem;
+        height: 1rem;
+        font-size: 14px;
+        transition: .1s;
+    }
+    header {
+        height: 10vh;
+        transition: .1s;
+    }
+    section {
+        height: 90vh;
+        transition: .1s;
+    }
+}
