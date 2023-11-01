@@ -3,7 +3,7 @@ from fastapi import APIRouter, Form, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
-templates = Jinja2Templates(directory="./src/public/templates")
+templates = Jinja2Templates(directory="public/templates")
 
 router = APIRouter()
 

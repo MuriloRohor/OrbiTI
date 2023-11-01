@@ -3,7 +3,7 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 
 router = APIRouter()
-templates = Jinja2Templates(directory="./src/public/templates")
+templates = Jinja2Templates(directory="public/templates")
 
 
 @router.get("/", response_class=HTMLResponse)
