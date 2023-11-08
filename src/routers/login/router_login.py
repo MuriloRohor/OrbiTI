@@ -14,7 +14,7 @@ def login_page(request: Request):
 
 @router.post("/", response_class=HTMLResponse)
 def get_form(usuario: Annotated[str, Form()], senha: Annotated[str, Form()]):
-    
+    print(usuario, senha)
     return "Deu certo!"
 
 

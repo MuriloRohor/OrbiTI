@@ -23,6 +23,10 @@ body {
     width: 75vw;
     height: 100vh;
 }
+.left-login > img {
+    width: 45rem;
+    transition: .1s
+}
 
 .right-login {
     background-color: #432548;
@@ -44,6 +48,7 @@ body {
 .right-login h1 {
     color: white;
     display: flex;
+    font-size: 3.5rem;
     align-items: flex-start;
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
@@ -64,17 +69,20 @@ body {
 .textfield input{
     font-family: 'Montserrat', sans-serif;
     background-color: rgba(255, 235, 205, 0);
-    padding: 10px;
     border: 1px solid white;
     border-radius: 4px;
     color: white;
-    margin-bottom: 7px;
+    margin-bottom: 1rem;
+    width: 15rem;
+    height: 2.5rem;
+    padding-left: 9px;
+    transition: .1s;
     
 }
 
 .btn-login{
-    width: 210px;
-    height: 30px;
+    width: 16rem;
+    height: 2.5rem;
     font-family: 'Montserrat', sans-serif;
     background-color: #A038B1;
     color: #ffffff;
@@ -82,6 +90,7 @@ body {
     margin-top: 10px;
     cursor: pointer;
     transition: transform 0.1s;
+    transition: .1s;
     
 }
 
@@ -96,4 +105,34 @@ button:active {
     outline: none;
     border-color: #ffffff; 
     box-shadow: 0 0 5px #ffffff; 
+}
+
+
+
+
+/*Media query para os inputs, img e botões - 720px*/
+@media (max-height: 720px) {
+    .textfield > input  {
+        width: 13rem;
+        height: 2.5rem;
+        transition: .1s;
+    }
+    
+    .btn-login{
+        width: 14rem;
+        height: 2.5rem;
+        transition: .1s;
+    }
+
+
+    .left-login > img {
+        width: 35rem;
+        transition: .1s;
+    }
+
+    .right-login h1 {
+        font-size: 2.5rem;
+        
+    }
+    
 }

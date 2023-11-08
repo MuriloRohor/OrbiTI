@@ -31,7 +31,7 @@ new Chart(ctx2, {
   data: {
     labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
     datasets: [{
-      label: 'Movimentação de Itens Estoque Espirito Santo',
+      label: 'Movimentação de entradas em estoques',
       backgroundColor: '#8B16EB',
       borderColor: '#8B16EB',
       data: [120, 190, 30, 50, 200, 45, 80, 79, 17, 500, 400, 550],
