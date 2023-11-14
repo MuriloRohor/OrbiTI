@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/solicitacao/criar.css') }}">
+    <title>OrbiTI</title>
+</head>
+
+<body>
+    <main>
+        <div class="left-side">
+            <div class="container">
+                {% include 'components/header.html' %}
+                <section>
+                    <div class="form-main">
+                        <form action="">
+                            <label for="titulo">Titulo</label>
+                            <br>
+                            <input type="text" name="titulo" id="titulo" placeholder="Titulo da Solicitação"><br>
+
+                            <label for="marca">ID do Produto</label>
+                            <br>
+                            <input type="text" name="marca" id="marca" placeholder="Marca do produto"><br>
+
+                            <label for="qntd">Qntd da Solicitação</label>
+                            <br>
+                            <input type="text" name="qntd" id="qntd" placeholder="Quantidade do produto"><br>
+
+                            <label for="desc">Descrição</label>
+                            <br>
+                            <textarea name="desc" id="desc" cols="20" rows="10"
+                                placeholder="Descrição do produto"> </textarea>
+                        </form>
+                    </div>
+                    <div class="form-btn">
+                        <button class="btn-confirm">Confirmar</button>
+                        <a class="btn-back" href="/solicitacao">Voltar</a>
+                    </div>
+                </section>
+            </div>
+            {% set current_page = "solicitacao" %}
+            <div class="navbar">
+                {% include 'components/navbar.html' %}
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

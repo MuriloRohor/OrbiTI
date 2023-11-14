@@ -1,8 +1,9 @@
-/* Definindo tamanho do layout e posicionando os elementos */
+/* Definindo tamanho do layot e posicionando os elementos */
 .container {
     height: 100vh;
     padding-left: 3rem;
     padding-right: 3rem;
+
 }
 
 header {
@@ -12,11 +13,6 @@ header {
 section {
     height: 90vh;
 
-}
-
-section img {
-    width: 250px;
-    height: 250px;
 }
 
 section>.form-main {
@@ -30,8 +26,6 @@ section>.form-btn {
     display: flex;
     justify-content: center;
     margin-top: 5rem;
-    gap: 20px;
-    
 }
 
 
@@ -59,9 +53,21 @@ section>.form-main>form>input {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2)
 }
 
+/*textarea*/
+section>.form-main>form>textarea {
+    border: 1px solid #ccc;
+    
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2)
+}
+
 section>.form-main>form>input:focus {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
     outline: none;
+}
+
+/*Botões do formulario*/
+section>.form-btn {
+    gap: 20px;
 }
 
 /*Defindo as cores*/
@@ -78,6 +84,7 @@ section>.form-btn>.btn-back {
     color: rgb(255, 255, 255);
     justify-content: center;
     align-items: center;
+
 }
 
 /*definindo os tamanhos dos botões*/
@@ -105,19 +112,17 @@ section>.form-btn>.btn-confirm:hover {
         0 0 25px #080808,
         0 0 30px #000000,
         0 0 35px #070707;
+
 }
 
 
 /*Media query para os inputs, img e botões - 720px*/
 @media (max-height: 720px) {
     section>.form-main>form>input {
-        width: 20rem; 
+        width: 22rem;
         height: 1rem;
     }
-    section img {
-        width: 180px;
-        height: 180px;
-    }
+
     section>.form-btn>.btn-back,
     section>.form-btn>.btn-confirm {
         width: 7rem;

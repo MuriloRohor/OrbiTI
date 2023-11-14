@@ -1,6 +1,7 @@
 from typing import Annotated
-from fastapi import APIRouter, Form, Request
-from fastapi.responses import HTMLResponse
+import time
+from fastapi import APIRouter, Form, Request, status
+from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 
 templates = Jinja2Templates(directory="public/templates")
@@ -15,7 +16,11 @@ def login_page(request: Request):
 @router.post("/", response_class=HTMLResponse)
 def get_form(usuario: Annotated[str, Form()], senha: Annotated[str, Form()]):
     print(usuario, senha)
-    return "Deu certo!"
+    if (usuario == "murilo" and senha == "123"):
+        print(usuario, senha)
+        time.sleep(5)
+    return RedirectResponse(url="/menu/", status_code=status.HTTP_302_FOUND)
+
 
 
 
