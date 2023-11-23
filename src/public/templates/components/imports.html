@@ -1,0 +1,6 @@
+<link rel="stylesheet" href="{{ url_for('static', path='/css/navbar.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', path='/css/layout.css') }}">
+
+{% if request.url.path in ['/estoque/', '/menu', 'relatorio', '/produto', '/solicitacao', ] %}
+<link rel="stylesheet" href="/static/css/main.css">
+{% endif %}

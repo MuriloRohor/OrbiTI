@@ -1,5 +1,4 @@
 /* Definindo tamanho do layot e posicionando os elementos */
-cd
 
 section>.btn-main {
     display: flex;
@@ -7,10 +6,6 @@ section>.btn-main {
     gap: 30px;
     flex-wrap: wrap;
 }
-
-
-
-
 
 /* Estilizações dos elementos */
 

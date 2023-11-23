@@ -1,19 +1,4 @@
-/* Definindo tamanho do layot e posicionando os elementos */
-.container {
-    height: 100vh;
-    padding-left: 3rem;
-    padding-right: 3rem;
 
-}
-
-header {
-    height: 10vh
-}
-
-section {
-    height: 90vh;
-
-}
 
 section>.form-main {
     display: flex;
