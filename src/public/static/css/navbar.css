@@ -1,4 +1,7 @@
-.navbar{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nanum+Myeongjo&family=Roboto:wght@300&display=swap');
+
+.navbar {
+    padding-top: 1rem;
     background-color: #432548;
     height: 100vh;
     position: fixed;
@@ -7,25 +10,36 @@
     right: 0;
     grid-area: navbar;
     display: grid;
-    grid-template-rows: .5fr .5fr 1fr .1fr 2fr;  
+    grid-template-rows: .5fr .5fr 1fr .1fr 2fr;
 }
-.navbar h1{
+
+.navbar >img {
+    height: 4rem;
+    justify-self: center;
+    align-self: center;
+   
+
+}
+
+.navbar h1 {
     color: azure;
     justify-self: center;
     align-self: center;
-    letter-spacing: 3px
+    letter-spacing: 3px;
+    font-family: 'Nanum Myeongjo', serif;
 }
 
 .navbar .profile {
     display: grid;
     grid-template-columns: 2fr 3fr 1fr;
-    
-    
+
+
 }
+
 .navbar .profile img {
     justify-self: center;
     align-self: center;
-    
+
 }
 
 .navbar .profile p {
@@ -41,20 +55,20 @@
     align-self: center;
 }
 
-.navbar ul{
+.navbar ul {
     display: grid;
     padding: 0;
     margin: 0;
     gap: 20px;
-    
+
 }
 
-.navbar ul li{
+.navbar ul li {
     list-style-type: none;
     color: azure;
     align-self: center;
-   
-    
+
+
 }
 
 .navbar ul li a {
@@ -63,36 +77,43 @@
     width: 100%;
     height: 100%;
     display: grid;
-    
+
     grid-template-columns: 80px 1fr;
     padding: 10px;
     transition: 0.5s;
-    
+
 
 }
-.navbar ul li a img{
+
+.navbar ul li a img {
     align-self: center;
     justify-self: center;
 }
-.navbar ul li a p{
+
+.navbar ul li a p {
     margin: 0;
     align-self: center;
     justify-self: left center;
 }
 
-.left-side{
+.left-side {
     background-color: whitesmoke;
     grid-area: left-side;
     height: 100vh;
 }
 
 .hr-nav {
-    border: none; /* Remove bordas padrão */
-    border-top: 1px dashed #ccc; /* Define a borda superior como tracejada */
+    border: none;
+    /* Remove bordas padrão */
+    border-top: 1px dashed #ccc;
+    /* Define a borda superior como tracejada */
     width: 100%;
-    height: 0; /* Ajusta a altura para 0, já que estamos usando a borda para criar a linha */
-    background-color: transparent; /* Garante que não haja cor de fundo */
-    margin: 10px 0; /* Adiciona uma margem vertical para separá-lo do conteúdo acima e abaixo */
+    height: 0;
+    /* Ajusta a altura para 0, já que estamos usando a borda para criar a linha */
+    background-color: transparent;
+    /* Garante que não haja cor de fundo */
+    margin: 10px 0;
+    /* Adiciona uma margem vertical para separá-lo do conteúdo acima e abaixo */
 }
 
 
@@ -107,10 +128,20 @@
     align-self: center;
 }
 
-.navbar ul li a.active, 
+.navbar ul li a.active,
 .navbar ul li a.active:hover {
     background-color: #BA68C8;
     transition: none;
     transform: none;
+
+}
+
+
+@media (max-height: 720px) {
+.navbar > img{
+    height: 3rem;
+    margin-bottom: 1rem;
     
+}
+
 }

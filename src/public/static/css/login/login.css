@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nanum+Myeongjo&family=Roboto:wght@300&display=swap');
 
 
 body {
@@ -52,8 +53,12 @@ body {
     font-size: 3.5rem;
     align-items: flex-start;
     justify-content: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nanum Myeongjo', serif;
     letter-spacing: 2px;
+}
+.right-login img {
+   margin-top: 8rem;
+   height: 20%;
 }
 
 .right-login a {

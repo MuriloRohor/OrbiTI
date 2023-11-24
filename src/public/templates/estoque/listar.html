@@ -1,88 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/navbar.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/layout.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/listagem.css') }}">
-    <title>OrbiTI</title>
-</head>
-
-<body>
-    <main>
-        <div class="left-side">
-            <div class="container">{% include 'components/header.html' %}
-                <section>
-                    <div class="table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nome</th>
-                                    <th>Cidade</th>
-                                    <th>Endereço</th>
-                                    <th>Descrição</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Galpão São Paulo</td>
-                                    <td>São Paulo - SP</td>
-                                    <td>R. da Consolação, 2300 - São Paulo, Cep: 01302-001</td>
-                                    <td>7.000 m² - Hub principal para tecnologia e inovação</td>                        
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Armazém Rio de Janeiro</td>
-                                    <td>Rio de Janeiro - RJ</td>
-                                    <td>Av. Brasil, 19.001 - Rio de Janeiro, Cep: 21040-360</td>
-                                    <td>6.500 m² - Especializado em softwares e licenças empresariais</td>                        
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Depósito Espírito Santo</td>
-                                    <td>Vitória - ES</td>
-                                    <td>R. Humberto Martins de Paula, 30 - Vitória, Cep: 29050-250</td>
-                                    <td>4.000 m² - Foco em logística e distribuição de hardware</td>                        
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Galpão Minas Gerais</td>
-                                    <td>Belo Horizonte - MG</td>
-                                    <td>Av. do Contorno, 4614 - Belo Horizonte, Cep: 30110-028</td>
-                                    <td>5.500 m² - Centro de reparos e manutenção de equipamentos</td>                        
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Armazém Bahia</td>
-                                    <td>Salvador - BA</td>
-                                    <td>R. Lucaia, 221 - Salvador, Cep: 41940-660</td>
-                                    <td>3.000 m² - Depósito de equipamentos de comunicação e telefonia</td>                        
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Depósito Goiás</td>
-                                    <td>Goiânia - GO</td>
-                                    <td>R. 3, 800 - Goiânia, Cep: 74023-010</td>
-                                    <td>3.800 m² - Armazenamento de dispositivos móveis e tablets</td>                        
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-            </div>
-        </div>
-        {% set current_page = "estoque" %}
-        <div class="navbar">
-            {% include 'components/navbar.html' %}
-        </div>
-
-    </main>
-
-
-</body>
-
-</html>
+{% extends "base.html" %}
+{% set current_page = "estoque" %}
+{% block content %}
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Cidade</th>
+                <th>Endereço</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Galpão São Paulo</td>
+                <td>São Paulo - SP</td>
+                <td>R. da Consolação, 2300 - São Paulo, Cep: 01302-001</td>
+                <td>7.000 m² - Hub principal para tecnologia e inovação</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Armazém Rio de Janeiro</td>
+                <td>Rio de Janeiro - RJ</td>
+                <td>Av. Brasil, 19.001 - Rio de Janeiro, Cep: 21040-360</td>
+                <td>6.500 m² - Especializado em softwares e licenças empresariais</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Depósito Espírito Santo</td>
+                <td>Vitória - ES</td>
+                <td>R. Humberto Martins de Paula, 30 - Vitória, Cep: 29050-250</td>
+                <td>4.000 m² - Foco em logística e distribuição de hardware</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Galpão Minas Gerais</td>
+                <td>Belo Horizonte - MG</td>
+                <td>Av. do Contorno, 4614 - Belo Horizonte, Cep: 30110-028</td>
+                <td>5.500 m² - Centro de reparos e manutenção de equipamentos</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Armazém Bahia</td>
+                <td>Salvador - BA</td>
+                <td>R. Lucaia, 221 - Salvador, Cep: 41940-660</td>
+                <td>3.000 m² - Depósito de equipamentos de comunicação e telefonia</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Depósito Goiás</td>
+                <td>Goiânia - GO</td>
+                <td>R. 3, 800 - Goiânia, Cep: 74023-010</td>
+                <td>3.800 m² - Armazenamento de dispositivos móveis e tablets</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
