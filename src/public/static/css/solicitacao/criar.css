@@ -48,24 +48,25 @@ section>.form-main>form>input {
     height: 2rem;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: none;
     transition: box-shadow 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2)
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
+
 
 /*textarea do formulario*/
 section>.form-main>form>textarea {
-    border: 1px solid #ccc;
+    border: none;
     resize: none;
     padding: 10px;
     width: 30rem;
     height: 9rem;
     transition: box-shadow 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2)
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 section>.form-main>form>input:focus {
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     outline: none;
 }
 section>.form-main>form>textarea:focus {
@@ -130,7 +131,8 @@ section>.form-btn>.btn-confirm:hover {
         width: 22rem;
         height: 1rem;
     }
-    section>.form-main>form>textarea{
+
+    section>.form-main>form>textarea {
         width: 22rem;
         height: 8rem;
     }

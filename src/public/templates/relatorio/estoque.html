@@ -1,50 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', path='css/navbar.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='css/layout.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='css/relatorio/estoque.css') }}">
-    <title>OrbiTI</title>
-</head>
-
-<body>
-    <main>
-        <div class="left-side">
-            <div class="container">
-                {% include 'components/header.html' %}
-                <section>
-                    <div class="graph-main">
-                        <div><canvas id="graph1"></canvas></div>
-                        <div><canvas id="graph2"></canvas></div>
-                        <div><canvas id="graph3"></canvas></div>
-                        <div><canvas id="graph4"></canvas></div>
-                    </div>
-                </section>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-        {% set current_page = "relatorio" %}
-        <div class="navbar">
-            {% include 'components/navbar.html' %}
-        </div>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="{{ url_for('static', path='js/relatorio/graficoEstoque.js') }}"></script>
-
-
-
-</body>
-
-</html>
-
-
+{% extends "base.html" %}
+{% set current_page = "relatorio" %}
+{% block content %}
+<div class="graph-main">
+    <div><canvas id="graph1"></canvas></div>
+    <div><canvas id="graph2"></canvas></div>
+    <div><canvas id="graph3"></canvas></div>
+    <div><canvas id="graph4"></canvas></div>
+</div>
+{% endblock %}

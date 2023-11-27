@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="/static/css/main.css">
 {% endif %}
 
-
 {% if request.path in ['/estoque/listar', '/produto/listar'] %}
 <!--Requisitar o CSS para Estilização da listagem de Produtos e Estoque-->
 <link rel="stylesheet" href="/static/css/listagem.css">
@@ -17,4 +16,19 @@
 {% if request.path in ['/estoque/cadastrar', '/estoque/editar', '/estoque/excluir', '/produto/cadastrar', '/produto/editar', '/produto/excluir'] %}
 <!--Requisitar o CSS para Estilização da crud de Produtos e Estoque-->
 <link rel="stylesheet" href="/static/css/crud.css">
+{% endif %}
+
+{% if request.path in ['/relatorio/estoque', '/relatorio/produto', '/relatorio/usuario'] %}
+<!--Requisitar o CSS para Estilização das graficos de Produto, Estoque e relatorios-->
+<link rel="stylesheet" href="/static/css/relatorio.css">
+{% endif %}
+
+{% if request.path == '/solicitacao/criar' %}
+<!--Requisitar o CSS para Estilização da criação de solicitação-->
+<link rel="stylesheet" href="/static/css/solicitacao/criar.css">
+{% endif %}
+
+{% if request.path == '/solicitacao/visualizar' %}
+<!--Requisitar o CSS para Estilização da listagem de solicitações-->
+<link rel="stylesheet" href="/static/css/solicitacao/visualizar.css">
 {% endif %}

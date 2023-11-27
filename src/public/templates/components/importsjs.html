@@ -1,0 +1,20 @@
+{% if request.path == '/relatorio/estoque' %}
+<!--Biblioteca chart.js-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!--Requisitar o JS para Configuração dos graficos de Estoque-->
+<script src="{{ url_for('static', path='js/relatorio/graficoEstoque.js') }}"></script>
+{% endif %}
+
+{% if request.path == '/relatorio/produto' %}
+<!--Biblioteca chart.js-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!--Requisitar o JS para Configuração dos graficos de Produto-->
+<script src="{{ url_for('static', path='js/relatorio/graficoProduto.js') }}"></script>
+{% endif %}
+
+{% if request.path == '/relatorio/usuario' %}
+<!--Biblioteca chart.js-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!--Requisitar o JS para Configuração dos graficos de Usuario-->
+<script src="{{ url_for('static', path='js/relatorio/graficoUsuario.js') }}"></script>
+{% endif %}
