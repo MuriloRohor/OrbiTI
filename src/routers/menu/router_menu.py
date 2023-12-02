@@ -14,7 +14,7 @@ def menu_main(request: Request):
 @router.get("/adicionar-produto", response_class=HTMLResponse)
 def menu_adicionar(request: Request):
     titulo_pagina = "Adicionar Produto"
-    return templates.TemplateResponse("/menu/adicionar-produto.html", {"request": request, "titulo": titulo_pagina})
+    return templates.TemplateResponse("menu/adicionar-produto.html", {"request": request, "titulo": titulo_pagina})
 
 @router.get("/transferencia-estoque", response_class=HTMLResponse)
 def menu_transferencia(request: Request):
