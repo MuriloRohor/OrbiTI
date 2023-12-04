@@ -1,9 +1,6 @@
 from .Base import Base
 from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-
-
-
+from sqlalchemy.orm import mapped_column, relationship
 class Endereco(Base):
     __tablename__ = "enderecos"
 
@@ -13,3 +10,5 @@ class Endereco(Base):
     logradouro: Mapped[str]
     bairro: Mapped[str]
     numero: Mapped[int] 
+
+    fornecedor = relationship("Fornecedor", back_populates="endereco", uselist=False)

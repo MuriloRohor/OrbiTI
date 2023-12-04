@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Endereço</title>
+</head>
+<body>
+    {% if endereco %}
+        <h1>Endereço: {{ endereco.logradouro }}</h1>
+        <!-- Outros detalhes do endereço -->
+    {% else %}
+        <h1>Endereço não encontrado</h1>
+    {% endif %}
+</body>
+</html>
