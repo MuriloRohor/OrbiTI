@@ -6,9 +6,9 @@ class Endereco(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     cep: Mapped[int]
-    cidade: Mapped[int]
+    cidade: Mapped[str]
     logradouro: Mapped[str]
     bairro: Mapped[str]
-    numero: Mapped[int] 
+    numero: Mapped[int]
 
     fornecedor = relationship("Fornecedor", back_populates="endereco", uselist=False)

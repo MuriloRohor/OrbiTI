@@ -23,7 +23,7 @@ def upgrade() -> None:
     op.create_table('enderecos',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('cep', sa.Integer(), nullable=False),
-    sa.Column('cidade', sa.Integer(), nullable=False),
+    sa.Column('cidade', sa.String(), nullable=False),
     sa.Column('logradouro', sa.String(), nullable=False),
     sa.Column('bairro', sa.String(), nullable=False),
     sa.Column('numero', sa.Integer(), nullable=False),
