@@ -12,11 +12,3 @@ class EnderecoOut(BaseModel):
     class Config:
         orm_mode = True
         from_attributes = True
-
-
-class EnderecoTest(BaseModel):
-    cep: int
-    cidade: int
-
-    class Config:
-        orm_mode = True
