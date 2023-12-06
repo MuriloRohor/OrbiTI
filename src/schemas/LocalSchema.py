@@ -3,7 +3,7 @@ from typing import Optional
 
 from .EnderecoSchema import EnderecoOut
 
-class LocalOut():
+class LocalOut(BaseModel):
     id: Optional[int] = None
     nome: str
     tipo: str

@@ -4,7 +4,7 @@ from typing import Optional
 from .EnderecoSchema import EnderecoOut
 from .PermissaoUsuarioSchema import PermissaoUsuarioOut
 
-class UsuarioOut:
+class UsuarioOut(BaseModel):
     id: Optional[int] = None
     nome: str
     sobrenome: str
@@ -17,4 +17,9 @@ class UsuarioOut:
     permissao_id: id
     permissao: Optional[PermissaoUsuarioOut] = None
     endereco: Optional[EnderecoOut] = None
+
+    class Config:
+        orm_mode = True
+        from_attributes = True
+
     
