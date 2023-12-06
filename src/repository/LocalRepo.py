@@ -45,5 +45,6 @@ class LocalRepo():
 
     def FiltrandoPorNome(self, filtro_nome: str):
         db_locais = self.session.query(Local).filter(Local.nome.contains(filtro_nome)).all()
-        return db_locais 
+        return db_locais
+     
         
