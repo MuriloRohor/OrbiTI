@@ -18,3 +18,9 @@
 <!--Requisitar o JS para Configuração dos graficos de Usuario-->
 <script src="{{ url_for('static', path='js/relatorio/graficoUsuario.js') }}"></script>
 {% endif %}
+
+
+{% if request.path == '/fornecedor/listar' %}
+<!--Requisitar o JS para funcionamento do modal-->
+<script src="{{ url_for('static', path='js/modal.js') }}"></script>
+{% endif %}

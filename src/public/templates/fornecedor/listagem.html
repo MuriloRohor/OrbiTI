@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% set current_page = "fornecedor" %}
+{% block content %}
+<h1>Lista Fornecedores</h1>
+<form action="http://localhost:8000/fornecedor/listar" method="get">
+    <input type="text" name="filtro_nome" placeholder="Nome do Fornecedor">
+    <input type="submit" value="Buscar">
+</form>
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
+                <table>
+                    <thead>
+                        <tr class="table100-head">
+                            <th class="column1">Cod Fornecedor</th>
+                            <th class="column2">Nome</th>
+                            <th class="column3">CNPJ</th>
+                            <th class="column4">Telefone</th>
+                            <th class="column5">Cep</th>
+                            <th class="column6">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for fornecedor in fornecedores %}
+                        <tr>
+                            <td class="column1">{{ fornecedor.id }}</td>
+                            <td class="column2">{{ fornecedor.nome }}</td>
+                            <td class="column3">{{ fornecedor.cnpj }}</td>
+                            <td class="column4">{{ fornecedor.telefone }}</td>
+                            <td class="column5">{{ fornecedor.endereco.cep }}</td>
+                            <td class="column6">
+                                <button onclick="editarRegistro('{{ fornecedor.id }}')">Editar</button>
+                                <button
+                                    onclick="excluirRegistro('{{ fornecedor.id }}', '{{ fornecedor.nome }}', '{{ fornecedor.cnpj }}', '{{ fornecedor.telefone }}', '{{fornecedor.diretorio_img}}', '{{ fornecedor.endereco.cep }}', '{{ fornecedor.endereco.cidade }}', '{{ fornecedor.endereco.logradouro }}', '{{ fornecedor.endereco.bairro }}', '{{ fornecedor.endereco.numero }}')">Excluir</button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalExcluir" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="header-modal">
+            <h2 class="title_modal">Confirmação de Exclusão</h2>
+            <span id="img_profile"><!-- Imagem será inserida aqui --></span>
+        </div>
+        <div class="detalhes-modal">
+            <div id="detalhesFornecedor"></div>
+            <div id="detalhesEndereco"></div>
+        </div>
+        <button id="confirmarExclusao">Confirmar</button>
+    </div>
+</div>
+{% endblock %}

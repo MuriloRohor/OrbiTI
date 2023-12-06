@@ -1,4 +1,3 @@
-import shutil
 import uuid
 from fastapi import File, Form, Depends, APIRouter, HTTPException, Request, UploadFile
 from fastapi.responses import HTMLResponse, RedirectResponse
@@ -6,8 +5,6 @@ from fastapi.templating import Jinja2Templates
 from src.sql.config.database import get_session
 from sqlalchemy.orm import Session
 from typing import Optional
-import os
-import re
 
 from src.sql.models.EnderecoModel import Endereco
 from src.sql.models.ForncedorModel import Fornecedor
@@ -16,50 +13,19 @@ from src.schemas.FornecedorSchema import FornecedorOut
 
 from src.repository.FornecedorRepo import FornecedorRepo
 
-
-
 templates = Jinja2Templates(directory="src/public/templates")
 router = APIRouter()
 
 IMAGES_DIR='src/public/static/img/logo_fornecedor/'
 
-"""
-@router.post('/', response_model=EnderecoSchema, status_code=201)
-def create_endereco(endereco: EnderecoSchema, session: Session = Depends(get_session)):
-    endereco = Endereco(
-        cep=endereco.cep,
-        cidade=endereco.cidade,
-        logradouro=endereco.logradouro,
-        bairro=endereco.bairro,
-        numero=endereco.numero
-    )
-    session.add(endereco)
-    session.commit()
-    session.refresh(endereco)
+@router.get("/")
+def exibir_form(request: Request):
+    titulo_pagina = "Listagem Fornecedor"
+    return templates.TemplateResponse("fornecedor/main.html", {"request": request, "titulo": titulo_pagina})
 
-    return endereco
-"""
-
-
-
-"""
-#def get_endereco(session: Session, endereco_id: int):
-    return session.query(Endereco).filter(Endereco.id == endereco_id).first()
-
-# Rota para mostrar o endereço
-"""
-
-
-
-"""
-@router.get("/showendereco/{endereco_id}", response_class=HTMLResponse)
-def show_endereco(request: Request, endereco_id: int, session: Session = Depends(get_session)):
-    #endereco = get_endereco(session, endereco_id)
-   # return templates.TemplateResponse("endereco.html", {"request": request, "endereco": endereco})
-
-"""
-@router.get("/fornecedor")
+@router.get("/listar")
 def exibir_form(request: Request,filtro_nome: Optional[str]= None, session: Session = Depends(get_session)):
+    titulo_pagina = "Listagem Fornecedor"
     fornecedor = FornecedorRepo(session)
     if filtro_nome:
         db_fornecedores = fornecedor.FiltrandoPorNome(filtro_nome)
@@ -68,7 +34,7 @@ def exibir_form(request: Request,filtro_nome: Optional[str]= None, session: Sess
         db_fornecedores = fornecedor.Listar()
         fornecedores = [FornecedorOut.from_orm(fornecedor) for fornecedor in db_fornecedores]
 
-    return templates.TemplateResponse("endereco.html", {"request": request, "fornecedores": fornecedores})
+    return templates.TemplateResponse("fornecedor/listagem.html", {"request": request, "titulo": titulo_pagina, "fornecedores": fornecedores})
 
 
 @router.post("/fornecedor", response_model=FornecedorOut)

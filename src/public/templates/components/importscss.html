@@ -32,3 +32,10 @@
 <!--Requisitar o CSS para Estilização da listagem de solicitações-->
 <link rel="stylesheet" href="/static/css/solicitacao/visualizar.css">
 {% endif %}
+
+{% if request.path == '/fornecedor/listar' %}
+<!--Requisitar o CSS para Estilização da listagem dos fornecedores-->
+<link rel="stylesheet" href="/static/css/listagemteste.css">
+<link rel="stylesheet" href="/static/css/modal.css">
+
+{% endif %}
