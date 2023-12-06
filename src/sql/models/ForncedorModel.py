@@ -4,6 +4,7 @@ from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column, relationship
 
 class Fornecedor(Base):
+    
     __tablename__ = 'fornecedors'
 
     id: Mapped[int] = mapped_column(primary_key=True)
