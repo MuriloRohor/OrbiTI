@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Endereço</title>
 </head>
+
 <body>
-    {% if endereco %}
-        <h1>Endereço: {{ endereco.logradouro }}</h1>
-        <!-- Outros detalhes do endereço -->
-    {% else %}
-        <h1>Endereço não encontrado</h1>
-    {% endif %}
-</body>
+    <form action="http://localhost:8000/fornecedor" method="post" enctype="multipart/form-data">
+        <h3>Cadastro Fornecedor</h3>
+        <input type="text" name="nome" placeholder="Nome">
+        <input type="number" name="cnpj" placeholder="CNPJ">
+        <input type="number" name="telefone" placeholder="Telefone">
+        <h3>Endereço</h3>
+        <input type="number" name="cep" placeholder="Cep">
+        <input type="text" name="cidade" placeholder="Cidade">
+        <input type="text" name="logradouro" placeholder="Logradouro">
+        <input type="text" name="bairro" placeholder="Bairro">
+        <input type="number" name="numero" placeholder="Numero">
+        <h3>Imagem</h3>
+        <input type="file" name="img" accept="image/png, image/jpeg">
+        <br>
+        <input type="submit" value="Cadastrar">
+    </form>
+
+    <h1>Lista Fornecedores</h1>
+    <form action="http://localhost:8000/fornecedor" method="get">
+        <input type="text" name="filtro_nome" placeholder="Nome do Fornecedor">
+        <input type="submit" value="Buscar">
+    </form>
+    <ul>
+        {% for fornecedor in fornecedores %}
+            <li>{{ fornecedor.nome }} - {{ fornecedor.cnpj }} {{fornecedor.endereco_id}} - {{
+                fornecedor.endereco.cidade}} - {{ fornecedor.endereco.bairro }} - <img src="{{ url_for('static', path=fornecedor.diretorio_img) }}" alt="{{fornecedor.diretorio_img}}" width="50px"></li>
+        {% endfor %}
+    </ul>
 </html>
+

@@ -1,14 +1,17 @@
 from pydantic import BaseModel
+from typing import Optional
 
-class EnderecoSchema(BaseModel):
+class EnderecoOut(BaseModel):
+    id: Optional[int] = None
     cep: int
-    cidade: int
+    cidade: str
     logradouro: str
     bairro: str
     numero: int
 
     class Config:
         orm_mode = True
+        from_attributes = True
 
 
 class EnderecoTest(BaseModel):

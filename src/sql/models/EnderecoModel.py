@@ -12,3 +12,5 @@ class Endereco(Base):
     numero: Mapped[int]
 
     fornecedor = relationship("Fornecedor", back_populates="endereco", uselist=False)
+    local = relationship("Local", back_populates="endereco", uselist=False)
+    usuario = relationship("Usuario", back_populates="endereco", uselist=False)
