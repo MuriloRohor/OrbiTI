@@ -26,10 +26,10 @@ class ProdutoRepo():
         return db_produto
     
     def Listar(self):
-        db_produto = self.session.query(Produto).all()
-        return db_produto
+        db_produtos = self.session.query(Produto).all()
+        return db_produtos
     
     def FiltrandoPorNome(self, filtro_nome: str):
-        db_produto = self.session.query(Produto).filter(Produto.nome.contains(filtro_nome)).all()
-        return db_produto
+        db_produtos = self.session.query(Produto).filter(Produto.nome.contains(filtro_nome)).all()
+        return db_produtos
     
