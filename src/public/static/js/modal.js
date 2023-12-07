@@ -4,19 +4,19 @@ function excluirRegistro(id, nome, cnpj, telefone, diretorio_img, cep, cidade, l
     let detalhesFornecedor = `
             <p>Fornecedor</p>
             
-            <span>Codigo - ${id}</span>
-            <span>Nome - ${nome}</span>
-            <span>CNPJ - ${cnpj}</span>
-            <span>Telefone - ${telefone}</span>
+            <span>Codigo: ${id}</span>
+            <span>Nome: ${nome}</span>
+            <span>CNPJ: ${cnpj}</span>
+            <span>Telefone: ${telefone}</span>
             `;
 
     let detalhesEndereco = `
             <p>Endereço</p>
-            <span>CEP - ${cep}</span>
-            <span>Cidade - ${cidade}</span>
-            <span>Logradouro - ${logradouro}</span>
-            <span>Bairro - ${bairro}</span>
-            <span>Numero - ${numero}</span>
+            <span>CEP: ${cep}</span>
+            <span>Cidade: ${cidade}</span>
+            <span>Logradouro: ${logradouro}</span>
+            <span>Bairro: ${bairro}</span>
+            <span>Numero: ${numero}</span>
             `;
 
     let img_profile = `<img src="/static${diretorio_img}" alt="" width=25% >`;

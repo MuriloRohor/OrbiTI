@@ -1,9 +1,8 @@
 {% extends "base.html" %}
 {% set current_page = "fornecedor" %}
 {% block content %}
-<h1>Lista Fornecedores</h1>
-<form action="http://localhost:8000/fornecedor/listar" method="get">
-    <input type="text" name="filtro_nome" placeholder="Nome do Fornecedor">
+<form class="filter-nome" action="http://localhost:8000/fornecedor/listar" method="get">
+    <input type="text" name="filtro_nome" placeholder="Nome do Fornecedor" autocomplete="off">
     <input type="submit" value="Buscar">
 </form>
 <div class="limiter">
@@ -13,7 +12,7 @@
                 <table>
                     <thead>
                         <tr class="table100-head">
-                            <th class="column1">Cod Fornecedor</th>
+                            <th class="column1">Codigo</th>
                             <th class="column2">Nome</th>
                             <th class="column3">CNPJ</th>
                             <th class="column4">Telefone</th>
@@ -30,9 +29,9 @@
                             <td class="column4">{{ fornecedor.telefone }}</td>
                             <td class="column5">{{ fornecedor.endereco.cep }}</td>
                             <td class="column6">
-                                <button onclick="editarRegistro('{{ fornecedor.id }}')">Editar</button>
-                                <button
-                                    onclick="excluirRegistro('{{ fornecedor.id }}', '{{ fornecedor.nome }}', '{{ fornecedor.cnpj }}', '{{ fornecedor.telefone }}', '{{fornecedor.diretorio_img}}', '{{ fornecedor.endereco.cep }}', '{{ fornecedor.endereco.cidade }}', '{{ fornecedor.endereco.logradouro }}', '{{ fornecedor.endereco.bairro }}', '{{ fornecedor.endereco.numero }}')">Excluir</button>
+                                <button class="btn-list" onclick="editarRegistro('{{ fornecedor.id }}')"><img src="{{ url_for('static', path='/img/forms/icon_edit.png') }}" alt=""></button>
+                                <button class="btn-list"
+                                    onclick="excluirRegistro('{{ fornecedor.id }}', '{{ fornecedor.nome }}', '{{ fornecedor.cnpj }}', '{{ fornecedor.telefone }}', '{{fornecedor.diretorio_img}}', '{{ fornecedor.endereco.cep }}', '{{ fornecedor.endereco.cidade }}', '{{ fornecedor.endereco.logradouro }}', '{{ fornecedor.endereco.bairro }}', '{{ fornecedor.endereco.numero }}')"><img src="{{ url_for('static', path='/img/forms/icon_lixeira.png') }}" alt=""></button>
                             </td>
                         </tr>
                         {% endfor %}
