@@ -1,40 +1,57 @@
+async function excluirRegistro(selectId) {
 
-// Quando o usuário clica no botão "Excluir"
-function excluirRegistro(id, nome, cnpj, telefone, diretorio_img, cep, cidade, logradouro, bairro, numero) {
-    let detalhesFornecedor = `
+    document.getElementById('detalhesFornecedor').innerHTML = '';
+    document.getElementById('detalhesEndereco').innerHTML = '';
+
+    const fornecedores = await getFornecedores();
+    console.log(fornecedores);
+
+    let fornecedor = null;
+
+    fornecedores.forEach(responseFornecedor => {
+        if (selectId == responseFornecedor.id) {
+            fornecedor = responseFornecedor
+        }
+    });
+
+    if (fornecedor) {
+        let detalhesFornecedor = `
             <p>Fornecedor</p>
-            
-            <span>Codigo: ${id}</span>
-            <span>Nome: ${nome}</span>
-            <span>CNPJ: ${cnpj}</span>
-            <span>Telefone: ${telefone}</span>
+            <span>Codigo: ${fornecedor.id}</span>
+            <span>Nome: ${fornecedor.nome}</span>
+            <span>CNPJ: ${fornecedor.cnpj}</span>
+            <span>Telefone: ${fornecedor.telefone}</span>
             `;
 
-    let detalhesEndereco = `
+        let detalhesEndereco = `
             <p>Endereço</p>
-            <span>CEP: ${cep}</span>
-            <span>Cidade: ${cidade}</span>
-            <span>Logradouro: ${logradouro}</span>
-            <span>Bairro: ${bairro}</span>
-            <span>Numero: ${numero}</span>
+            <span>CEP: ${fornecedor.endereco.cep}</span>
+            <span>Cidade: ${fornecedor.endereco.cidade}</span>
+            <span>Logradouro: ${fornecedor.endereco.logradouro}</span>
+            <span>Bairro: ${fornecedor.endereco.bairro}</span>
+            <span>Numero: ${fornecedor.endereco.numero}</span>
             `;
 
-    let img_profile = `<img src="/static${diretorio_img}" alt="" width=25% >`;
+        let img_profile = `<img src="/static${fornecedor.diretorio_img}" alt="" width=25% >`;
 
+        // Exibe os detalhes no modal
+        document.getElementById('detalhesFornecedor').innerHTML = detalhesFornecedor;
+        document.getElementById('detalhesEndereco').innerHTML = detalhesEndereco;
+        document.getElementById('img_profile').innerHTML = img_profile;
 
-    // Exibe os detalhes no modal
-    document.getElementById('detalhesFornecedor').innerHTML = detalhesFornecedor;
-    document.getElementById('detalhesEndereco').innerHTML = detalhesEndereco;
-    document.getElementById('img_profile').innerHTML = img_profile;
+        // Exibe o modal
+        var modal = document.getElementById('modalExcluir');
+        modal.style.display = "block";
 
+        // Aplica o efeito de desfoque ao mainContent
+        document.getElementById('mainContent').classList.add('blur');
 
-    // Exibe o modal
-    var modal = document.getElementById('modalExcluir');
-    modal.style.display = "block";
-
-    // Aplica o efeito de desfoque ao mainContent
-    document.getElementById('mainContent').classList.add('blur');
+        
+    } else {
+        console.log("Fornecedor não encontrado.");
+    }
 }
+
 
 // Fechar o modal
 var span = document.getElementsByClassName("close")[0];
@@ -52,4 +69,3 @@ window.onclick = function (event) {
         document.getElementById('mainContent').classList.remove('blur');
     }
 }
-

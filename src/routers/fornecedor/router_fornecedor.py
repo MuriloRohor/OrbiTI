@@ -4,7 +4,7 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from src.sql.config.database import get_session
 from sqlalchemy.orm import Session
-from typing import Optional
+from typing import List, Optional
 
 from src.sql.models.EnderecoModel import Endereco
 from src.sql.models.ForncedorModel import Fornecedor
@@ -24,7 +24,7 @@ def exibir_form(request: Request):
     return templates.TemplateResponse("fornecedor/main.html", {"request": request, "titulo": titulo_pagina})
 
 @router.get("/listar")
-def exibir_form(request: Request,filtro_nome: Optional[str]= None, session: Session = Depends(get_session)):
+def exibir_form(request: Request, filtro_nome: Optional[str]= None, session: Session = Depends(get_session)):
     titulo_pagina = "Listagem Fornecedor"
     fornecedor = FornecedorRepo(session)
     if filtro_nome:
@@ -35,6 +35,12 @@ def exibir_form(request: Request,filtro_nome: Optional[str]= None, session: Sess
         fornecedores = [FornecedorOut.from_orm(fornecedor) for fornecedor in db_fornecedores]
 
     return templates.TemplateResponse("fornecedor/listagem.html", {"request": request, "titulo": titulo_pagina, "fornecedores": fornecedores})
+
+
+@router.get('/listagem/todas', response_model=List[FornecedorOut])
+def getAllFornecedores(request: Request, session: Session = Depends(get_session)):
+    fornecedores = FornecedorRepo(session).Listar()
+    return fornecedores
 
 
 @router.post("/fornecedor", response_model=FornecedorOut)

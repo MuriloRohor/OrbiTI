@@ -22,5 +22,8 @@
 
 {% if request.path == '/fornecedor/listar' %}
 <!--Requisitar o JS para funcionamento do modal-->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="{{ url_for('static', path='js/listarFornecedor.js') }}"></script>
 <script src="{{ url_for('static', path='js/modal.js') }}"></script>
+
 {% endif %}

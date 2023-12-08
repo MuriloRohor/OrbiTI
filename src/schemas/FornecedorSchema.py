@@ -9,12 +9,12 @@ class FornecedorOut(BaseModel):
     nome: str
     cnpj: int
     telefone: int
-    endereco_id: int
     diretorio_img: str
+    endereco_id: int
     endereco: Optional[EnderecoOut] = None
 
     class Config:
         orm_mode = True
-        from_attributes = True
+        from_attributes=True
 
     

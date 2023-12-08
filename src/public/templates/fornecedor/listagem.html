@@ -31,7 +31,7 @@
                             <td class="column6">
                                 <button class="btn-list" onclick="editarRegistro('{{ fornecedor.id }}')"><img src="{{ url_for('static', path='/img/forms/icon_edit.png') }}" alt=""></button>
                                 <button class="btn-list"
-                                    onclick="excluirRegistro('{{ fornecedor.id }}', '{{ fornecedor.nome }}', '{{ fornecedor.cnpj }}', '{{ fornecedor.telefone }}', '{{fornecedor.diretorio_img}}', '{{ fornecedor.endereco.cep }}', '{{ fornecedor.endereco.cidade }}', '{{ fornecedor.endereco.logradouro }}', '{{ fornecedor.endereco.bairro }}', '{{ fornecedor.endereco.numero }}')"><img src="{{ url_for('static', path='/img/forms/icon_lixeira.png') }}" alt=""></button>
+                                    onclick="excluirRegistro('{{ fornecedor.id }}')"><img src="{{ url_for('static', path='/img/forms/icon_lixeira.png') }}" alt=""></button>
                             </td>
                         </tr>
                         {% endfor %}
