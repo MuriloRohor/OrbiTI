@@ -1,5 +1,7 @@
+from sqlalchemy import delete
 from sqlalchemy.orm import Session
 from src.sql.models.models import Endereco, Fornecedor
+from src.schemas.FornecedorSchema import FornecedorSchema
 
 
 class FornecedorRepo():
@@ -50,5 +52,19 @@ class FornecedorRepo():
     def FiltrandoPorNome(self, filtro_nome: str):
         db_fornecedores = self.session.query(Fornecedor).filter(Fornecedor.nome.contains(filtro_nome)).all()
         return db_fornecedores
+    
+    def DeletarPorID(self, id: int, fornecedor: FornecedorSchema):
+        try:
+            db_fornecedor = delete(Fornecedor).where(Fornecedor.id == fornecedor.id)
+            db_endereco = delete(Endereco).where(Endereco.id == fornecedor.endereco_id)
+
+            self.session.execute(db_fornecedor)
+            self.session.execute(db_endereco)
+
+            self.session.commit()
+            return "Forncedor Deletado"
+        except Exception as e:
+            print("Erro ao deletar", e)
+        
 
 

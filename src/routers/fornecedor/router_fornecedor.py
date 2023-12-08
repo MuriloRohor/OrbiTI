@@ -6,10 +6,7 @@ from src.sql.config.database import get_session
 from sqlalchemy.orm import Session
 from typing import List, Optional
 
-from src.sql.models.EnderecoModel import Endereco
-from src.sql.models.ForncedorModel import Fornecedor
-
-from src.schemas.FornecedorSchema import FornecedorOut
+from src.schemas.FornecedorSchema import FornecedorSchema
 
 from src.repository.FornecedorRepo import FornecedorRepo
 
@@ -29,21 +26,27 @@ def exibir_form(request: Request, filtro_nome: Optional[str]= None, session: Ses
     fornecedor = FornecedorRepo(session)
     if filtro_nome:
         db_fornecedores = fornecedor.FiltrandoPorNome(filtro_nome)
-        fornecedores = [FornecedorOut.from_orm(fornecedor) for fornecedor in db_fornecedores]
+        fornecedores = [FornecedorSchema.from_orm(fornecedor) for fornecedor in db_fornecedores]
     else:
         db_fornecedores = fornecedor.Listar()
-        fornecedores = [FornecedorOut.from_orm(fornecedor) for fornecedor in db_fornecedores]
+        fornecedores = [FornecedorSchema.from_orm(fornecedor) for fornecedor in db_fornecedores]
 
     return templates.TemplateResponse("fornecedor/listagem.html", {"request": request, "titulo": titulo_pagina, "fornecedores": fornecedores})
 
 
-@router.get('/listagem/todas', response_model=List[FornecedorOut])
-def getAllFornecedores(request: Request, session: Session = Depends(get_session)):
+@router.get('/listagem/todas', response_model=List[FornecedorSchema])
+def get_fornecedores(request: Request, session: Session = Depends(get_session)):
     fornecedores = FornecedorRepo(session).Listar()
     return fornecedores
 
+@router.delete('/listar/delete/{id}')
+def delete_for_id_fornecedor(request: Request,id: int ,session: Session = Depends(get_session)):
+    pass
 
-@router.post("/fornecedor", response_model=FornecedorOut)
+
+
+
+@router.post("/fornecedor", response_model=FornecedorSchema)
 async def create_fornecedor(
     request: Request, 
     cep: int = Form(...), 

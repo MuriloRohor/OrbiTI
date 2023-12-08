@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from typing import Optional
 
-class EnderecoOut(BaseModel):
+class EnderecoSchema(BaseModel):
     id: Optional[int] = None
     cep: int
     cidade: str

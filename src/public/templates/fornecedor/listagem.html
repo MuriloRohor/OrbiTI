@@ -41,19 +41,5 @@
         </div>
     </div>
 </div>
-
-<div id="modalExcluir" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="header-modal">
-            <h2 class="title_modal">Confirmação de Exclusão</h2>
-            <span id="img_profile"><!-- Imagem será inserida aqui --></span>
-        </div>
-        <div class="detalhes-modal">
-            <div id="detalhesFornecedor"></div>
-            <div id="detalhesEndereco"></div>
-        </div>
-        <button id="confirmarExclusao">Confirmar</button>
-    </div>
-</div>
+{% include 'fornecedor/modalExcluir.html' %}
 {% endblock %}
