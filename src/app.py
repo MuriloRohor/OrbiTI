@@ -1,7 +1,6 @@
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from fastapi.middleware.cors import CORSMiddleware
 
 from src.routers.login.router_login import router as router_login
 from src.routers.menu.router_menu import router as router_menu
@@ -13,14 +12,6 @@ from src.routers.fornecedor.router_fornecedor import router as router_fornecedor
 import uvicorn
 
 app = FastAPI()
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # Permite todas as origens
-    allow_credentials=True,
-    allow_methods=["*"],  # Permite todos os métodos
-    allow_headers=["*"],  # Permite todos os cabeçalhos
-)
 
 app.mount("/static", StaticFiles(directory="src/public/static"), name="static")
 
