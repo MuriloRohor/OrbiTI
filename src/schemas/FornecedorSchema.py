@@ -7,6 +7,7 @@ from .EnderecoSchema import EnderecoSchema
 class FornecedorSchema(BaseModel):
     id: Optional[int] = None
     nome: str
+    email: str
     cnpj: int
     telefone: int
     diretorio_img: str

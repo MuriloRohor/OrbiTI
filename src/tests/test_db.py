@@ -43,6 +43,7 @@ def test_create_fornecedor(session):
 
     new_fornecedor = Fornecedor(
         nome="pedro",
+        email="fornecedor@email.com",
         cnpj=1234567891000,
         telefone=123456789,
         diretorio_img="/img/logo_fornecedor/teste.png",
@@ -114,6 +115,7 @@ def teste_create_Produto(session):
 
     new_fornecedor_for_produto = Fornecedor(
         nome="marcos",
+        email="fornecedor@email.com",
         cnpj=1234567891000,
         telefone=123456789,
         diretorio_img="/img/logo_fornecedor/teste.png",
@@ -205,6 +207,7 @@ def test_create_user(session):
         data_nascimento="02/02/2002",
         cpf=1,
         cargo="teste",
+        email="user@email.com",
         login="user",
         senha="secret",
         endereco_id=endereco_id,

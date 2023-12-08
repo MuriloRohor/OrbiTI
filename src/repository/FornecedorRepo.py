@@ -17,6 +17,7 @@ class FornecedorRepo():
         bairro : str,
         numero : int,
         nome : str,
+        email: str,
         cnpj: int,
         telefone: int,
         diretorio_img: str
@@ -35,6 +36,7 @@ class FornecedorRepo():
 
         db_fornecedor = Fornecedor(
             nome=nome, 
+            email=email,
             cnpj=cnpj, 
             telefone=telefone,
             diretorio_img=diretorio_img,

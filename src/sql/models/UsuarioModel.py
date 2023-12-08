@@ -12,6 +12,7 @@ class Usuario(Base):
     data_nascimento: Mapped[str]
     cpf: Mapped[int]
     cargo: Mapped[str]
+    email: Mapped[str]
     login: Mapped[str]
     senha: Mapped[str]
     endereco_id: Mapped[int] = mapped_column(ForeignKey('enderecos.id'))

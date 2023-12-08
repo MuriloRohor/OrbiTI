@@ -15,10 +15,10 @@ router = APIRouter()
 
 IMAGES_DIR='src/public/static/img/logo_fornecedor/'
 
-@router.get("/")
-def exibir_form(request: Request):
+@router.get("/cadastrar")
+def get_cadastro_fornecedores(request: Request):
     titulo_pagina = "Listagem Fornecedor"
-    return templates.TemplateResponse("fornecedor/main.html", {"request": request, "titulo": titulo_pagina})
+    return templates.TemplateResponse("fornecedor/cadastrar.html", {"request": request, "titulo": titulo_pagina})
 
 @router.get("/listar")
 def exibir_form(request: Request, filtro_nome: Optional[str]= None, session: Session = Depends(get_session)):
@@ -35,7 +35,7 @@ def exibir_form(request: Request, filtro_nome: Optional[str]= None, session: Ses
 
 
 @router.get('/listagem/todas', response_model=List[FornecedorSchema])
-def get_fornecedores(request: Request, session: Session = Depends(get_session)):
+def get_all_fornecedores(request: Request, session: Session = Depends(get_session)):
     fornecedores = FornecedorRepo(session).Listar()
     return fornecedores
 
@@ -55,7 +55,8 @@ async def create_fornecedor(
     logradouro: str = Form(...), 
     bairro: str = Form(...), 
     numero: int = Form(...), 
-    nome: str = Form(...), 
+    nome: str = Form(...),
+    email: str = Form(...), 
     cnpj: int = Form(...), 
     telefone: int = Form(...),
     img: UploadFile = File(...),
@@ -85,6 +86,7 @@ async def create_fornecedor(
             bairro,
             numero,
             nome,
+            email,
             cnpj,
             telefone,
             diretorio_img

@@ -9,6 +9,7 @@ class Fornecedor(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     nome: Mapped[str]
+    email: Mapped[str]
     cnpj: Mapped[int]
     telefone: Mapped[int]
     diretorio_img: Mapped[str]
