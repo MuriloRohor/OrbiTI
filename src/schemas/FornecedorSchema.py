@@ -17,4 +17,12 @@ class FornecedorSchema(BaseModel):
         orm_mode = True
         from_attributes=True
 
+
+class FornecedorSchemaDelete(BaseModel):
+    id: int
+    endereco_id:int
+
+    class Config:
+        orm_mode = True
+
     

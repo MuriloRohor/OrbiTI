@@ -6,7 +6,7 @@ from src.sql.config.database import get_session
 from sqlalchemy.orm import Session
 from typing import List, Optional
 
-from src.schemas.FornecedorSchema import FornecedorSchema
+from src.schemas.FornecedorSchema import FornecedorSchema, FornecedorSchemaDelete
 
 from src.repository.FornecedorRepo import FornecedorRepo
 
@@ -39,9 +39,10 @@ def get_fornecedores(request: Request, session: Session = Depends(get_session)):
     fornecedores = FornecedorRepo(session).Listar()
     return fornecedores
 
-@router.delete('/listar/delete/{id}')
-def delete_for_id_fornecedor(request: Request,id: int ,session: Session = Depends(get_session)):
-    pass
+@router.delete('/listar/delete')
+def delete_for_id_fornecedor(request: Request, fornecedor: FornecedorSchemaDelete, session: Session = Depends(get_session)):
+    FornecedorRepo(session).DeletarPorID(fornecedor)
+    return "Produto Deletado"
 
 
 
