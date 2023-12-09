@@ -27,7 +27,8 @@ main {
 }
 
 header {
-    height: 10vh
+    height: auto;
+    min-height: 10vh;
 }
 
 section {
