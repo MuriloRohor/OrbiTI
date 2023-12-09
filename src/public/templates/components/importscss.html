@@ -8,7 +8,7 @@
 <!--Requisitar o CSS para Estilização da listagem de Produtos e Estoque-->
 <link rel="stylesheet" href="/static/css/listagem.css">
 {% endif %}
-{% if request.path in ['/estoque/cadastrar', '/estoque/editar', '/estoque/excluir', '/produto/cadastrar', '/produto/editar', '/produto/excluir', '/fornecedor/cadastrar'] %}
+{% if request.path in ['/estoque/cadastrar', '/estoque/editar', '/estoque/excluir', '/produto/cadastrar', '/produto/editar', '/produto/excluir'] %}
 <!--Requisitar o CSS para Estilização da crud de Produtos e Estoque-->
 <link rel="stylesheet" href="/static/css/crud.css">
 {% endif %}
@@ -30,3 +30,8 @@
 <link rel="stylesheet" href="/static/css/modal.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 {% endif %}
+{% if request.path == '/fornecedor/cadastrar' %}
+<!--Requisitar o CSS para Estilização da crud de Produtos e Estoque-->
+<link rel="stylesheet" href="/static/css/crud_test.css">
+{% endif %}
+

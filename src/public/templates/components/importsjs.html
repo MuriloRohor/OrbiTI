@@ -27,3 +27,9 @@
 <script src="{{ url_for('static', path='js/modal.js') }}"></script>
 
 {% endif %}
+
+{% if request.path == '/fornecedor/cadastrar' %}
+<!--Requisitar o JS para funcionamento do modal-->
+<script src="{{ url_for('static', path='js/inputFile.js') }}"></script>
+
+{% endif %}

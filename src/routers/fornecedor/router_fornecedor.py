@@ -17,7 +17,7 @@ IMAGES_DIR='src/public/static/img/logo_fornecedor/'
 
 @router.get("/cadastrar")
 def get_cadastro_fornecedores(request: Request):
-    titulo_pagina = "Listagem Fornecedor"
+    titulo_pagina = "Cadastro Fornecedor"
     return templates.TemplateResponse("fornecedor/cadastrar.html", {"request": request, "titulo": titulo_pagina})
 
 @router.get("/listar")
