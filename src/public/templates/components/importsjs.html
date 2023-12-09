@@ -25,11 +25,14 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="{{ url_for('static', path='js/listarFornecedor.js') }}"></script>
 <script src="{{ url_for('static', path='js/modal.js') }}"></script>
-
 {% endif %}
 
 {% if request.path == '/fornecedor/cadastrar' %}
 <!--Requisitar o JS para funcionamento do modal-->
 <script src="{{ url_for('static', path='js/inputFile.js') }}"></script>
+{% endif %}
 
+{% if request.path == '/produto/cadastrar' %}
+<!--Requisitar o JS para funcionamento do modal-->
+<script src="{{ url_for('static', path='js/inputFile.js') }}"></script>
 {% endif %}

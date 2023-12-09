@@ -15,7 +15,7 @@ section>.form-main {
 
 
 .file-upload {
-    display: flex;
+    display: flex;  
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -98,6 +98,16 @@ header hr {
 }
 
 /*Input dos Formulario*/
+.form-group textarea {
+    border: none;
+    resize: none;
+    padding: 10px;
+    width: 30rem;
+    height: 9rem;
+    transition: box-shadow 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
 .form-group input {
     width: 30rem;
     height: 2rem;
@@ -109,8 +119,24 @@ header hr {
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
+.form-group select {
+    width: 30rem;
+    height: 3.1rem;
+    padding: 10px;
+    background-color: white;
+    margin-bottom: 10px;
+    border: none;
+    transition: box-shadow 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
 .form-group input:focus {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    outline: none;
+}
+
+.form-group textarea:focus {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
     outline: none;
 }
 
@@ -168,11 +194,20 @@ section>.form-btn>.btn-confirm:hover {
 /*Media query para os inputs, img e botões - 720px*/
 @media (max-height: 720px) {
 
-    input[type="text"],
-    input[type="email"],
-    input[type="number"] {
+    .form-group input {
         width: 20rem;
         height: 1rem;
+    }
+
+    .form-group textarea{
+        width: 20rem;
+        
+    }
+    
+    .form-group select{
+        width: 21rem;
+        height: 2.2rem;
+        
     }
 
     section>.form-btn>.btn-back,
