@@ -1,27 +1,49 @@
 {% extends "base.html" %}
 {% set current_page = "produto" %}
 {% block content %}
-<div class="form-main">
-    <form action="">
-        <label for="nome">Nome</label>
-        <br>
-        <input type="text" name="nome" id="nome" placeholder="Nome do produto" autocomplete="off"><br>
+<form action="" class="form-main">
+    <div class="file-upload">
+        <img id="image-preview" src="{{ url_for('static', path='/img/forms/icon_upload.svg') }}" alt="">
+        <input type="file" name="img" id="real-file" accept="image/png, image/jpeg">
+        <button type="button" id="custom-button">Selecionar Imagem</button>
+        <span id="custom-text">Nenhum arquivo escolhido ainda.</span>
+    </div>
+    <div class="form-left">
+        <div>
+            <div class="form-group">
+                <label for="nome">Nome</label>
 
-        <label for="marca">Marca</label>
-        <br>
-        <input type="text" name="marca" id="marca" placeholder="Marca do produto" autocomplete="off"><br>
+                <input type="text" name="nome" placeholder="Nome do fornecedor" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
 
-        <label for="categoria">Categoria</label>
-        <br>
-        <input type="text" name="categoria" id="categoria" placeholder="Categoria do produto" autocomplete="off"><br>
+                <input type="email" name="email" placeholder="Ex: email@email.com.br" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="cnpj">CNPJ</label>
 
-        <label for="desc">Descrição</label>
-        <br>
-        <input type="text" name="desc" id="desc" placeholder="Descrição do produto" autocomplete="off">
-    </form>
-</div>
+                <input type="number" name="cnpj" placeholder="cnpj do fornecedor" autocomplete="off">
+            </div>
+        </div>
+    </div>
+    <div class="form-right">
+        <div>
+            <div class="form-group">
+                <label for="cep">CEP</label>
+
+                <input type="number" name="cep" placeholder="12345678" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="cidade">Cidade</label>
+
+                <input type="text" name="cidade" placeholder="Cidade" autocomplete="off">
+            </div>
+        </div>
+    </div>
+</form>
 <div class="form-btn">
     <button class="btn-confirm">Confirmar</button>
-    <a class="btn-back" href="/produto">Voltar</a>
+    <a class="btn-back" href="/fornecedor">Voltar</a>
 </div>
 {% endblock %}

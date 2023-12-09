@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from typing import Optional
 
-from .FornecedorSchema import FornecedorOut
+from .FornecedorSchema import FornecedorSchema
 from .CategoriaSchema import CategoriaOut
 
 class ProdutoOut(BaseModel):
@@ -12,7 +12,7 @@ class ProdutoOut(BaseModel):
     categoria_id: int
     fornecedor_id: int
     categoria: Optional[CategoriaOut] = None
-    fornecedor: Optional[FornecedorOut] = None
+    fornecedor: Optional[FornecedorSchema] = None
 
     class Config:
         orm_mode = True

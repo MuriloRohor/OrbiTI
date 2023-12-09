@@ -5,8 +5,8 @@ section>.form-main {
     gap: 20px;
 }
 
-.form-fornecedor,
-.form-endereco {
+.form-left>div,
+.form-right>div {
     flex-basis: calc(50% - 20px);
     /* Define a largura inicial de cada coluna menos o gap */
     display: flex;
