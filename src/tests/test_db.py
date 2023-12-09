@@ -148,6 +148,7 @@ def teste_create_Produto(session):
         nome="Hero",
         marca="AOC",
         descricao="Monitor Gamer 144hz 1ms",
+        diretorio_img="/img/logo_fornecedor/teste.png",
         categoria_id=categoria_id,
         fornecedor_id=fornecedor_id
     )

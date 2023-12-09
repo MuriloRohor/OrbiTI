@@ -10,6 +10,7 @@ class Produto(Base):
     nome: Mapped[str]
     marca: Mapped[str]
     descricao: Mapped[str]
+    diretorio_img: Mapped[str]
     categoria_id: Mapped[int] = mapped_column(ForeignKey('categorias.id'))
     fornecedor_id: Mapped[int] = mapped_column(ForeignKey("fornecedors.id"))
 

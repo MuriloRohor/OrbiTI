@@ -9,6 +9,7 @@ class ProdutoOut(BaseModel):
     nome: str
     marca: str
     descricao: str
+    diretorio_img: str
     categoria_id: int
     fornecedor_id: int
     categoria: Optional[CategoriaOut] = None
