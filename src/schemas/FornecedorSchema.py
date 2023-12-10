@@ -26,4 +26,19 @@ class FornecedorSchemaDelete(BaseModel):
     class Config:
         orm_mode = True
 
+class FornecedorSchemaFilterName(BaseModel):
+    nome: str
+    pagina: int
+
+    class Config:
+        orm_mode = True
+
+class FornecedorSchemaBasic(BaseModel):
+    id: int
+    nome: str
+    cnpj: int
+
+    class Config:
+        orm_mode = True
+
     

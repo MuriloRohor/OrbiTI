@@ -6,7 +6,7 @@ from src.sql.config.database import get_session
 from sqlalchemy.orm import Session
 from typing import List, Optional
 
-from src.schemas.FornecedorSchema import FornecedorSchema, FornecedorSchemaDelete
+from src.schemas.FornecedorSchema import FornecedorSchema, FornecedorSchemaDelete, FornecedorSchemaFilterName
 
 from src.repository.FornecedorRepo import FornecedorRepo
 
@@ -37,6 +37,11 @@ def exibir_form(request: Request, filtro_nome: Optional[str]= None, session: Ses
 @router.get('/listagem/todas', response_model=List[FornecedorSchema])
 def get_all_fornecedores(request: Request, session: Session = Depends(get_session)):
     fornecedores = FornecedorRepo(session).Listar()
+    return fornecedores
+
+@router.get('/listagem/por-nome', response_model=List[FornecedorSchema])
+def get_filterbyname_fornecedores(requst: Request, filtro: FornecedorSchemaFilterName, session: Session = Depends(get_session)):
+    fornecedores = FornecedorRepo(session).FiltrandoPorNome(filtro.nome, filtro.pagina)
     return fornecedores
 
 @router.delete('/listar/delete')

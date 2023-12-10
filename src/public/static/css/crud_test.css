@@ -1,3 +1,33 @@
+/* Exibir imagem selecionada */
+#real-file {
+    display: none;
+}
+
+#custom-button {
+    /* Estilização do botão vai aqui */
+    padding: 8px;
+    color: white;
+    background-color: black;
+    border: none;
+
+    cursor: pointer;
+}
+
+#custom-button:hover {
+    /* Estilização do hover do botão */
+    background-color: #555;
+}
+
+#custom-text {
+    margin-left: 10px;
+    line-height: 2.5;
+    color: #aaa;
+}
+
+
+
+/* Formularios */
+
 section>.form-main {
     display: flex;
     justify-content: center;
@@ -15,13 +45,13 @@ section>.form-main {
 
 
 .file-upload {
-    display: flex;  
+    display: flex;
     width: 100%;
     flex-direction: column;
     align-items: center;
     position: relative;
     overflow: hidden;
-    
+
 }
 
 
@@ -31,41 +61,26 @@ section>.form-main {
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     margin-bottom: 10px;
-    
+
 
 }
-
-#real-file {
-    display: none;
-}
-
-#custom-button {
-    /* Estilização do botão vai aqui */
-    padding: 8px;
-    color: white;
-    background-color: black;
-    border: none;
-    
-    cursor: pointer;
-}
-
-#custom-button:hover {
-    /* Estilização do hover do botão */
-    background-color: #555;
-}
-
-#custom-text {
-    margin-left: 10px;
-    line-height: 2.5;
-    color: #aaa;
-}
-
 
 .form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
     /* Espaço entre os campos do formulário */
+}
+
+.form-group > label > button img {
+    width: 17px;
+    height: 17px;
+}
+
+.form-group>label>button {
+    border: none;
+    background-color: rgba(163, 131, 131, 0);
+    cursor: pointer; 
 }
 
 .form-btn {
@@ -120,7 +135,7 @@ header hr {
 }
 
 .form-group select {
-    width: 30rem;
+    width: 31rem;
     height: 3.1rem;
     padding: 10px;
     background-color: white;
@@ -128,6 +143,11 @@ header hr {
     border: none;
     transition: box-shadow 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.form-group label {
+
+    font-size: 22px;
 }
 
 .form-group input:focus {
@@ -199,15 +219,26 @@ section>.form-btn>.btn-confirm:hover {
         height: 1rem;
     }
 
-    .form-group textarea{
+    .form-group textarea {
         width: 20rem;
-        
+
     }
-    
-    .form-group select{
+
+    .form-group select {
         width: 21rem;
         height: 2.2rem;
-        
+
+    }
+
+    .form-group label {
+
+        font-size: 18px;
+    }
+
+    .form-group label button img {
+
+        width: 12px;
+        height: 12px; 
     }
 
     section>.form-btn>.btn-back,

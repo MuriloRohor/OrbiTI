@@ -51,8 +51,16 @@ class FornecedorRepo():
         db_fornecedores = self.session.query(Fornecedor).all()
         return db_fornecedores
     
-    def FiltrandoPorNome(self, filtro_nome: str):
-        db_fornecedores = self.session.query(Fornecedor).filter(Fornecedor.nome.contains(filtro_nome)).all()
+    def FiltrandoPorNome(self, filtro_nome: str, pagina_atual: int, itens_por_pagina=10):
+        # Calcula o Deslocamentoo
+        offset = (pagina_atual - 1) * itens_por_pagina
+
+        db_fornecedores = self.session.query(Fornecedor)\
+                                      .filter(Fornecedor.nome.contains(filtro_nome)).all()\
+                                      .limit(itens_por_pagina)\
+                                      .offset(offset)\
+                                      .all()
+
         return db_fornecedores
     
     def DeletarPorID(self, fornecedor: FornecedorSchemaDelete):

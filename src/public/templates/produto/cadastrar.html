@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% set current_page = "produto" %}
 {% block content %}
-<form action="" class="form-main">
+<form action="" class="form-main" method="post">
     <div class="file-upload">
         <img id="image-preview" src="{{ url_for('static', path='/img/forms/icon_upload.svg') }}" alt="">
         <input type="file" name="img" id="real-file" accept="image/png, image/jpeg">
@@ -35,7 +35,7 @@
                   </select>
             </div>
             <div class="form-group">
-                <label for="fornecedor">Fornecedor</label>
+                <label for="fornecedor">Fornecedor <button type="button" id="btn-buscarFornecedor"><img src="{{ url_for('static', path='/img/forms/icon_search.png') }}" alt=""></button></label>
                 <input type="text" name="fornecedor" placeholder="Fornecedor do produto" autocomplete="off">
             </div>
         </div>
