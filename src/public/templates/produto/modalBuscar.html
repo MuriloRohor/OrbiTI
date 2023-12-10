@@ -3,17 +3,32 @@
         <span class="close">&times;</span>
         <div class="header-modal">
             <h2 class="title_modal">Busca Fornecedor</h2>
-            <span id="img_profile"></span>
         </div>
-        <form class="filter-nome" action="http://localhost:8000/fornecedor/listar" method="get">
-            <input type="text" name="filtro_nome" placeholder="Nome do Fornecedor" autocomplete="off">
+        <form class="filter-nome" id="formBuscaFornecedor" method="get">
+            <input type="text" name="filtro_nome" id="inputNomeFornecedor" placeholder="Nome do Fornecedor"
+                autocomplete="off">
             <input type="submit" value="Buscar">
         </form>
         <div class="detalhes-modal">
             <div id="detalhesFornecedor">
-                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nome</th>
+                            <th>CNPJ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <button id="confirmarExclusao">Confirmar</button>
+        <div class="pagination">
+            <button id="btnPaginaAnterior" disabled>Anterior</button>
+            <span id="infoPagina">Página 1</span>
+            <button id="btnProximaPagina">Próxima</button>
+        </div>
+        <button id="sairModal">Cancelar</button>
     </div>
 </div>

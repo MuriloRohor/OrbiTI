@@ -6,7 +6,7 @@ async function excluirRegistro(selectId) {
     const fornecedores = await getFornecedores();
     console.log(fornecedores);
 
-     fornecedor = null;
+    fornecedor = null;
 
     fornecedores.forEach(responseFornecedor => {
         if (selectId == responseFornecedor.id) {
@@ -20,6 +20,7 @@ async function excluirRegistro(selectId) {
             <span>Codigo: ${fornecedor.id}</span>
             <span>Nome: ${fornecedor.nome}</span>
             <span>CNPJ: ${fornecedor.cnpj}</span>
+            <span>Email: ${fornecedor.email}</span>
             <span>Telefone: ${fornecedor.telefone}</span>
             `;
 
@@ -83,45 +84,6 @@ document.getElementById('confirmarExclusao').addEventListener('click', async fun
         alert('Erro ao processar a solicitação:', error);
     }
 });
-
-
-
-document.getElementById('confirmarExclusao').addEventListener('click', async function () {
-    // Obtenha o ID do fornecedor e o ID do endereço
-    const fornecedorId = fornecedor.id;
-    const enderecoId = fornecedor.endereco.id;
-
-    const data = {
-        fornecedorId: fornecedorId,
-        enderecoId: enderecoId
-    };
-
-    const url = 'http://localhost:8000/fornecedor/listar/delete';
-
-    try {
-        // Envie a solicitação HTTP para excluir o fornecedor usando o Axios
-        const response = await axios.delete(url, { data });
-
-        if (response.status === 200) {
-            // A exclusão foi bem-sucedida
-            alert('Fornecedor excluído com sucesso.');
-            // Feche o modal
-            var modal = document.getElementById('modalExcluir');
-            modal.style.display = "none";
-            document.getElementById('modal-content').classList.remove('blur');
-            // Recarregue ou atualize a lista de fornecedores, se necessário
-        } else {
-            // Algo deu errado ao excluir
-            alert('Erro ao excluir o fornecedor.');
-        }
-    } catch (error) {
-        alert('Erro ao processar a solicitação:', error);
-    }
-});
-
-
-
-
 
 // Fechar o modal
 var span = document.getElementsByClassName("close")[0];

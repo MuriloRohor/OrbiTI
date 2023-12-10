@@ -56,7 +56,7 @@ class FornecedorRepo():
         offset = (pagina_atual - 1) * itens_por_pagina
 
         db_fornecedores = self.session.query(Fornecedor)\
-                                      .filter(Fornecedor.nome.contains(filtro_nome)).all()\
+                                      .filter(Fornecedor.nome.contains(filtro_nome))\
                                       .limit(itens_por_pagina)\
                                       .offset(offset)\
                                       .all()

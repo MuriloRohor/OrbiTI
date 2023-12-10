@@ -39,7 +39,7 @@ def get_all_fornecedores(request: Request, session: Session = Depends(get_sessio
     fornecedores = FornecedorRepo(session).Listar()
     return fornecedores
 
-@router.get('/listagem/por-nome', response_model=List[FornecedorSchema])
+@router.post('/listagem/pornome', response_model=List[FornecedorSchema])
 def get_filterbyname_fornecedores(requst: Request, filtro: FornecedorSchemaFilterName, session: Session = Depends(get_session)):
     fornecedores = FornecedorRepo(session).FiltrandoPorNome(filtro.nome, filtro.pagina)
     return fornecedores

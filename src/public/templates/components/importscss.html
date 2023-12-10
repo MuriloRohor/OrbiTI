@@ -12,6 +12,9 @@
 <!--Requisitar o CSS para Estilização da crud de Produtos e Estoque-->
 <link rel="stylesheet" href="/static/css/crud_test.css">
 {% endif %}
+{% if request.path == '/produto/cadastrar' %}
+<link rel="stylesheet" href="/static/css/produto/modal.css">
+{% endif %}
 {% if request.path in ['/relatorio/estoque', '/relatorio/produto', '/relatorio/usuario'] %}
 <!--Requisitar o CSS para Estilização das graficos de Produto, Estoque e relatorios-->
 <link rel="stylesheet" href="/static/css/relatorio.css">
@@ -34,4 +37,5 @@
 <!--Requisitar o CSS para Estilização da crud de Produtos e Estoque-->
 <link rel="stylesheet" href="/static/css/crud_test.css">
 {% endif %}
+
 
