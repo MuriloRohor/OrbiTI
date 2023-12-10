@@ -77,14 +77,18 @@
 }
 
 
-#detalhesFornecedor,
-#detalhesEndereco {
+#detalhesFornecedor{
     display: flex;
     flex-direction: column;
     flex: 1;
     padding: 10px;
-    border: solid 1px
-    /* Espaçamento interno */
+    border: solid 1px;
+    cursor: pointer;
+}
+
+#detalhesFornecedor tr:hover{
+    background-color: #1f1919;
+    color: white;
 }
 
 #confirmarExclusao {

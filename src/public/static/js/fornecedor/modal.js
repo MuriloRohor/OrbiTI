@@ -19,8 +19,8 @@ async function excluirRegistro(selectId) {
             <p>Fornecedor</p>
             <span>Codigo: ${fornecedor.id}</span>
             <span>Nome: ${fornecedor.nome}</span>
-            <span>CNPJ: ${fornecedor.cnpj}</span>
             <span>Email: ${fornecedor.email}</span>
+            <span>CNPJ: ${fornecedor.cnpj}</span>
             <span>Telefone: ${fornecedor.telefone}</span>
             `;
 

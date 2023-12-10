@@ -13,8 +13,8 @@ function buscarFornecedores(pagina) {
             var tbody = document.querySelector('#detalhesFornecedor tbody');
             tbody.innerHTML = '';
             response.data.forEach(fornecedor => {
-                var row = `<tr>
-                            <td>${fornecedor.codigo}</td>
+                var row = `<tr onclick="selecionarFornecedor(${fornecedor.id})">
+                            <td>${fornecedor.id}</td>
                             <td>${fornecedor.nome}</td>
                             <td>${fornecedor.cnpj}</td>
                            </tr>`;
@@ -51,6 +51,16 @@ document.getElementById('btn-buscarFornecedor').addEventListener('click', functi
     modal.style.display = 'block';
 });
 
+
+function selecionarFornecedor(fornecedorId) {
+    // Atualiza o valor do input no formulário
+    document.getElementById('inputFornecedor').value = fornecedorId;
+
+    // Fecha o modal (se necessário)
+    var modal = document.getElementById('modalBuscar');
+    modal.style.display = 'none';
+}
+
 // Fechar o modal ao clicar no botão de fechar
 var span = document.querySelector('#modalBuscar .close');
 span.onclick = function () {
@@ -65,9 +75,3 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
-
-
-
-
-// Inicializa a primeira busca
-buscarFornecedores(paginaAtual);
