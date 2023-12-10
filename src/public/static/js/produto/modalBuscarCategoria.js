@@ -13,9 +13,9 @@ function buscarCategoria(pagina) {
             var tbody = document.querySelector('#detalhesCategoria tbody');
             tbody.innerHTML = '';
             response.data.forEach(categoria => {
-                var row = `<tr onclick="selecionarFornecedor(${categoria.id})">
-                            <td>${fornecedor.id}</td>
-                            <td>${fornecedor.nome}</td>
+                var row = `<tr onclick="selecionarCategoria(${categoria.id})">
+                             <td>${categoria.id}</td>
+                             <td>${categoria.nome}</td>
                            </tr>`;
                 tbody.innerHTML += row;
             });
@@ -31,16 +31,16 @@ function buscarCategoria(pagina) {
 
 document.getElementById('formBuscarCategoria').addEventListener('submit', function (e) {
     e.preventDefault();
-    buscarCategorias(paginaAtual);
+    buscarCategoria(paginaAtual);
 });
 
-document.getElementById('btnProximaPagina').addEventListener('click', function () {
-    buscarCategorias(++paginaAtual);
+document.getElementById('btnProximaPaginaCategoria').addEventListener('click', function () {
+    buscarCategoria(++paginaAtual);
 });
 
-document.getElementById('btnPaginaAnterior').addEventListener('click', function () {
+document.getElementById('btnPaginaAnteriorCategoria').addEventListener('click', function () {
     if (paginaAtual > 1) {
-        buscarCategorias(--paginaAtual);
+        buscarCategoria(--paginaAtual);
     }
 });
 
@@ -56,20 +56,20 @@ function selecionarCategoria(categoriaId) {
     document.getElementById('inputCategoria').value = categoriaId;
 
     // Fecha o modal (se necessário)
-    var modal = document.getElementById('modalBuscar');
+    var modal = document.getElementById('modalBuscarCategoria');
     modal.style.display = 'none';
 }
 
 // Fechar o modal ao clicar no botão de fechar
-var span = document.querySelector('#modalBuscar .close');
+var span = document.querySelector('#modalBuscarCategoria .close');
 span.onclick = function () {
-    var modal = document.getElementById('modalBuscar');
+    var modal = document.getElementById('modalBuscarCategoria');
     modal.style.display = "none";
 }
 
 // Fechar o modal ao clicar fora dele
 window.onclick = function (event) {
-    var modal = document.getElementById('modalBuscar');
+    var modal = document.getElementById('modalBuscarCategoria');
     if (event.target == modal) {
         modal.style.display = "none";
     }

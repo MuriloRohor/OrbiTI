@@ -7,5 +7,13 @@ class CategoriaSchema(BaseModel):
 
     class Config:
         orm_mode = True
+
+
+class CategoriaSchemaFilterName(BaseModel):
+    nome: str
+    pagina: int
+
+    class Config:
+        orm_mode = True
         
 
