@@ -9,6 +9,7 @@ from src.routers.estoque.router_estoque import router as router_estoque
 from src.routers.relatorio.router_relatorio import router as router_relatorio
 from src.routers.solicitacao.router_solicitacao import router as router_solicitacao
 from src.routers.fornecedor.router_fornecedor import router as router_fornecedor
+from src.routers.categoria.router_categoria import router as router_categoria
 import uvicorn
 
 app = FastAPI()
@@ -23,3 +24,4 @@ app.include_router(router_estoque, prefix="/estoque")
 app.include_router(router_relatorio, prefix="/relatorio")
 app.include_router(router_solicitacao, prefix="/solicitacao")
 app.include_router(router_fornecedor, prefix="/fornecedor")
+app.include_router(router_categoria, prefix="/categoria")

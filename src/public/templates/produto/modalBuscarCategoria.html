@@ -1,0 +1,32 @@
+<div id="modalBuscarCategoria" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="header-modal">
+            <h2 class="title_modal">Busca Categoria</h2>
+        </div>
+        <form class="filter-nome" id="formBuscaCategoria">
+            <input type="text" name="filtro_nome" id="inputNomeCategoria" placeholder="Nome da Categoria"
+                autocomplete="off">
+            <input type="submit" value="Buscar">
+        </form>
+        <div class="detalhes-modal">
+            <div id="detalhesCategoria">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nome</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="pagination">
+            <button id="btnPaginaAnterior" disabled>Anterior</button>
+            <span id="infoPagina">Página 1</span>
+            <button id="btnProximaPagina">Próxima</button>
+        </div>
+    </div>
+</div>

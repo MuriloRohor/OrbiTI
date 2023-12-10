@@ -27,9 +27,10 @@
     <div class="form-right">
         <div>
             <div class="form-group">
-                <label for="categoriaSelect">Selecione a Categoria</label>
-                <select name="categoriaSelect" id="categoriaSelect">
-                </select>
+                <label for="categoria">Categoria <button type="button" id="btn-buscarCategoria"><img
+                            src="{{ url_for('static', path='/img/forms/icon_search.png') }}" alt=""></button></label>
+                <input type="text" name="categoria" id="inputCategoria" placeholder="Categoria do Produto"
+                    autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="fornecedor">Fornecedor <button type="button" id="btn-buscarFornecedor"><img
@@ -44,5 +45,6 @@
     <button class="btn-confirm">Confirmar</button>
     <a class="btn-back" href="/produto">Voltar</a>
 </div>
-{% include 'produto/modalBuscar.html' %}
+{% include 'produto/modalBuscarFornecedor.html' %}
+{% include 'produto/modalBuscarCategoria.html' %}
 {% endblock %}
