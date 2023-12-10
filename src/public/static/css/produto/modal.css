@@ -18,7 +18,7 @@
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
     /*padding-top: ;*/
-    
+
 
 }
 
@@ -31,10 +31,10 @@
     padding: 20px;
     border: 1px solid #888;
     border: none;
-    
+
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     width: 700px;
-    
+
     /* Could be more or less, depending on screen size */
 }
 
@@ -76,8 +76,62 @@
     /* Fornecedor à esquerda, Endereço à direita */
 }
 
+.modal .modal-content .filter-nome{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
 
-#detalhesFornecedor{
+.modal .modal-content .filter-nome input[type="text"] {
+    width: 95%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #432548;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 19px;
+}
+
+.modal .modal-content .filter-nome input[type="submit"]{
+    width: 7rem;
+    height: 2rem;
+    margin-bottom: 15px;
+    color: white;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+     
+  }
+
+.modal .modal-content .filter-nome input[type="text"]:focus{
+    outline: none;
+}
+
+.modal .modal-content .pagination {
+    font-size: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.modal .modal-content .pagination button {
+    font-size: 19px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 5rem;
+    height: 2rem;
+    color: white;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+#detalhesFornecedor {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -86,7 +140,7 @@
     cursor: pointer;
 }
 
-#detalhesFornecedor tr:hover{
+#detalhesFornecedor tr:hover {
     background-color: #1f1919;
     color: white;
 }

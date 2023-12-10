@@ -1,6 +1,15 @@
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Depends, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+from sqlalchemy.orm import Session
+from typing import List
+
+from src.sql.config.database import get_session
+
+from src.repository.CategoriaRepo import CategoriaRepo
+
+from src.schemas.CategoriaSchema import CategoriaSchema
+
 
 templates = Jinja2Templates(directory="src/public/templates")
 
@@ -30,3 +39,8 @@ def produto_excluir(request: Request):
 def produto_listar(request: Request):
     titulo_page = "Listar Produto"
     return templates.TemplateResponse("produto/listar.html", {"request": request, "titulo": titulo_page})
+
+@router.get('/listar/categoria', response_model=List[CategoriaSchema])
+def get_all_catgorias(request: Request, session: Session = Depends(get_session)):
+    categorias = CategoriaRepo(session).ListarTodas()
+    return categorias

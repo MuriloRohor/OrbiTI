@@ -35,6 +35,7 @@
 {% if request.path == '/produto/cadastrar' %}
 <!--Requisitar o JS para funcionamento do modal-->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="{{ url_for('static', path='js/produto/listarCategorias.js') }}"></script>
 <script src="{{ url_for('static', path='js/produto/modalBuscarFornecedor.js') }}"></script>
 <script src="{{ url_for('static', path='js/inputFile.js') }}"></script>
 {% endif %}
