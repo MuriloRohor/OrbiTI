@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% set current_page = "fornecedor" %}
 {% block content %}
-<form action="" class="form-main">
+<form action="http://localhost:8000/fornecedor/criar" method="post" enctype="multipart/form-data" class="form-main">
     <div class="file-upload">
         <img id="image-preview" src="{{ url_for('static', path='/img/forms/icon_upload.svg') }}" alt="">
         <input type="file" name="img" id="real-file" accept="image/png, image/jpeg">
@@ -64,9 +64,10 @@
             </div>
         </div>
     </div>
+    <div class="form-btn">
+        <button type="submit" class="btn-confirm">Confirmar</button>
+        <a class="btn-back" href="/fornecedor">Voltar</a>
+    </div>
 </form>
-<div class="form-btn">
-    <button class="btn-confirm">Confirmar</button>
-    <a class="btn-back" href="/fornecedor">Voltar</a>
-</div>
+
 {% endblock %}

@@ -3,16 +3,6 @@ async function excluirRegistro(selectId) {
     document.getElementById('detalhesFornecedor').innerHTML = '';
     document.getElementById('detalhesEndereco').innerHTML = '';
 
-    const fornecedores = await getFornecedores();
-    console.log(fornecedores);
-
-    fornecedor = null;
-
-    fornecedores.forEach(responseFornecedor => {
-        if (selectId == responseFornecedor.id) {
-            fornecedor = responseFornecedor
-        }
-    });
 
     if (fornecedor) {
         let detalhesFornecedor = `

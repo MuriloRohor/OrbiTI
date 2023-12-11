@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% set current_page = "fornecedor" %}
 {% block content %}
-<form class="filter-nome" action="http://localhost:8000/fornecedor/listar" method="get">
-    <input type="text" name="filtro_nome" placeholder="Nome do Fornecedor" autocomplete="off">
+<form class="filter-nome" id="formBuscarFornecedor">
+    <input type="text" id="inputNomeFornecedor" name="filtro_nome" placeholder="Nome do Fornecedor" autocomplete="off">
     <input type="submit" value="Buscar">
 </form>
 <div class="limiter">
@@ -20,26 +20,18 @@
                             <th class="column6">Ações</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {% for fornecedor in fornecedores %}
-                        <tr>
-                            <td class="column1">{{ fornecedor.id }}</td>
-                            <td class="column2">{{ fornecedor.nome }}</td>
-                            <td class="column3">{{ fornecedor.cnpj }}</td>
-                            <td class="column4">{{ fornecedor.telefone }}</td>
-                            <td class="column5">{{ fornecedor.endereco.cep }}</td>
-                            <td class="column6">
-                                <button class="btn-list" onclick="editarRegistro('{{ fornecedor.id }}')"><img src="{{ url_for('static', path='/img/forms/icon_edit.png') }}" alt=""></button>
-                                <button class="btn-list"
-                                    onclick="excluirRegistro('{{ fornecedor.id }}')"><img src="{{ url_for('static', path='/img/forms/icon_lixeira.png') }}" alt=""></button>
-                            </td>
-                        </tr>
-                        {% endfor %}
+                    <tbody id="infoFornecedorTabela">
+                        
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+</div>
+<div class="pagination">
+    <button id="btnPaginaAnteriorListagemFornecedor" disabled>Anterior</button>
+    <span id="infoPaginaListagemFornecedor">Página 1</span>
+    <button id="btnProximaPaginaListagemFornecedor">Próxima</button>
 </div>
 {% include 'fornecedor/modalExcluir.html' %}
 {% endblock %}

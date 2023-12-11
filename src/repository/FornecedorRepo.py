@@ -47,8 +47,13 @@ class FornecedorRepo():
         
         return db_fornecedor
     
-    def Listar(self): 
-        db_fornecedores = self.session.query(Fornecedor).all()
+    def Listar(self, pagina_atual: int, itens_por_pagina=10):
+        offset = (pagina_atual -1) * itens_por_pagina
+
+        db_fornecedores = self.session.query(Fornecedor)\
+                                      .limit(itens_por_pagina)\
+                                      .offset(offset)\
+                                      .all()
         return db_fornecedores
     
     def FiltrandoPorNome(self, filtro_nome: str, pagina_atual: int, itens_por_pagina=10):

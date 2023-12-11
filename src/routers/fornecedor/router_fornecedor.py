@@ -23,23 +23,16 @@ def get_cadastro_fornecedores(request: Request):
 @router.get("/listar")
 def exibir_form(request: Request, filtro_nome: Optional[str]= None, session: Session = Depends(get_session)):
     titulo_pagina = "Listagem Fornecedor"
-    fornecedor = FornecedorRepo(session)
-    if filtro_nome:
-        db_fornecedores = fornecedor.FiltrandoPorNome(filtro_nome)
-        fornecedores = [FornecedorSchema.from_orm(fornecedor) for fornecedor in db_fornecedores]
-    else:
-        db_fornecedores = fornecedor.Listar()
-        fornecedores = [FornecedorSchema.from_orm(fornecedor) for fornecedor in db_fornecedores]
-
-    return templates.TemplateResponse("fornecedor/listagem.html", {"request": request, "titulo": titulo_pagina, "fornecedores": fornecedores})
+    
+    return templates.TemplateResponse("fornecedor/listagem.html", {"request": request, "titulo": titulo_pagina})
 
 
-@router.get('/listagem/todas', response_model=List[FornecedorSchema])
+@router.get('/listar/obter-por-id', response_model=FornecedorSchema)
 def get_all_fornecedores(request: Request, session: Session = Depends(get_session)):
     fornecedores = FornecedorRepo(session).Listar()
     return fornecedores
 
-@router.post('/listagem/pornome', response_model=List[FornecedorSchema])
+@router.post('/listar/pornome', response_model=List[FornecedorSchema])
 def get_filterbyname_fornecedores(requst: Request, filtro: FornecedorSchemaFilterName, session: Session = Depends(get_session)):
     fornecedores = FornecedorRepo(session).FiltrandoPorNome(filtro.nome, filtro.pagina)
     return fornecedores
@@ -52,7 +45,7 @@ def delete_for_id_fornecedor(request: Request, fornecedor: FornecedorSchemaDelet
 
 
 
-@router.post("/fornecedor", response_model=FornecedorSchema)
+@router.post("/criar")
 async def create_fornecedor(
     request: Request, 
     cep: int = Form(...), 
@@ -97,7 +90,7 @@ async def create_fornecedor(
             diretorio_img
         )
 
-        return RedirectResponse(url="/fornecedor", status_code=302)
+        return RedirectResponse(url="/fornecedor/cadastrar", status_code=302)
     except Exception as e:
         session.rollback()
         raise HTTPException(status_code=400, detail=str(e))

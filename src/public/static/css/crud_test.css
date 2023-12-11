@@ -65,6 +65,12 @@ section>.form-main {
 
 }
 
+.form-btn {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
@@ -161,17 +167,17 @@ header hr {
 }
 
 /*Botões do formulario*/
-section>.form-btn {
+.form-btn {
     gap: 20px;
 }
 
 /*Defindo as cores*/
-section>.form-btn>.btn-confirm {
+.form-btn>.btn-confirm {
     background-color: black;
     color: white;
 }
 
-section>.form-btn>.btn-back {
+.form-btn>.btn-back {
     display: flex;
     background-color: red;
     color: white;
@@ -183,8 +189,8 @@ section>.form-btn>.btn-back {
 }
 
 /*definindo os tamanhos dos botões*/
-section>.form-btn>.btn-back,
-section>.form-btn>.btn-confirm {
+.form-btn>.btn-back,
+.form-btn>.btn-confirm {
     border: none;
     margin: 5px;
     width: 9rem;
@@ -194,8 +200,8 @@ section>.form-btn>.btn-confirm {
 }
 
 /*Aplica o efeito ao passar o mouse em cima*/
-section>.form-btn>.btn-back:hover,
-section>.form-btn>.btn-confirm:hover {
+.form-btn>.btn-back:hover,
+.form-btn>.btn-confirm:hover {
     transition: .1s;
     transform: translate(1px, 3px);
     color: #f8f8f8;
@@ -241,8 +247,8 @@ section>.form-btn>.btn-confirm:hover {
         height: 12px; 
     }
 
-    section>.form-btn>.btn-back,
-    section>.form-btn>.btn-confirm {
+    .form-btn>.btn-back,
+    .form-btn>.btn-confirm {
         width: 7rem;
         height: 2rem;
         font-size: 14px;
