@@ -1,5 +1,5 @@
 
-var paginaAtual = 1;
+var paginaAtualCategoria = 1;
 
 function buscarCategoria(pagina) {
     var nome = document.getElementById('inputNomeCategoria').value;
@@ -21,8 +21,8 @@ function buscarCategoria(pagina) {
             });
 
             // Atualiza a informação da página
-            document.getElementById('infoPagina').textContent = 'Página ' + pagina;
-            document.getElementById('btnPaginaAnterior').disabled = pagina === 1;
+            document.getElementById('infoPaginaCategoria').textContent = 'Página ' + pagina;
+            document.getElementById('btnPaginaAnteriorCategoria').disabled = pagina === 1;
         })
         .catch(function (error) {
             console.error('Erro ao buscar categorias:', error);
@@ -31,16 +31,16 @@ function buscarCategoria(pagina) {
 
 document.getElementById('formBuscarCategoria').addEventListener('submit', function (e) {
     e.preventDefault();
-    buscarCategoria(paginaAtual);
+    buscarCategoria(paginaAtualCategoria);
 });
 
 document.getElementById('btnProximaPaginaCategoria').addEventListener('click', function () {
-    buscarCategoria(++paginaAtual);
+    buscarCategoria(++paginaAtualCategoria);
 });
 
 document.getElementById('btnPaginaAnteriorCategoria').addEventListener('click', function () {
-    if (paginaAtual > 1) {
-        buscarCategoria(--paginaAtual);
+    if (paginaAtualCategoria > 1) {
+        buscarCategoria(--paginaAtualCategoria);
     }
 });
 
