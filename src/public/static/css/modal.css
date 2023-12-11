@@ -61,12 +61,11 @@
 #img_profile img {
     max-height: 100px;
     /* Ajuste conforme necessário */
-    max-height: 100px;
     /* Ajuste conforme necessário */
     width: auto;
     padding: 10px;
     /* Mantém a proporção da imagem */
-    border-radius: 50%;
+    border-radius: 100%;
 }
 
 .detalhes-modal {

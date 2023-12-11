@@ -1,7 +1,7 @@
-from sqlalchemy import delete
+from sqlalchemy import delete, select
 from sqlalchemy.orm import Session
 from src.sql.models.models import Endereco, Fornecedor
-from src.schemas.FornecedorSchema import FornecedorSchema, FornecedorSchemaDelete
+from src.schemas.FornecedorSchema import FornecedorSchema, FornecedorSchemaDelete, FornecedorSchemaId
 
 
 class FornecedorRepo():
@@ -67,6 +67,12 @@ class FornecedorRepo():
                                       .all()
 
         return db_fornecedores
+    
+    def ObterPorID(self, fornecedor: FornecedorSchemaId):
+        db_fornecedor = self.session.query(Fornecedor)\
+                                    .filter(Fornecedor.id == fornecedor.id)\
+                                    .first()
+        return db_fornecedor
     
     def DeletarPorID(self, fornecedor: FornecedorSchemaDelete):
         try:

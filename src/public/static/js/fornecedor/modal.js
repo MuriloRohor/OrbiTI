@@ -2,10 +2,15 @@ async function excluirRegistro(selectId) {
 
     document.getElementById('detalhesFornecedor').innerHTML = '';
     document.getElementById('detalhesEndereco').innerHTML = '';
+    try {
+        const response = await axios.post('http://localhost:8000/fornecedor/listar/obter-por-id', {
+            id: selectId
+        });
 
+        const fornecedor = response.data;
 
-    if (fornecedor) {
-        let detalhesFornecedor = `
+        if (fornecedor) {
+            let detalhesFornecedor = `
             <p>Fornecedor</p>
             <span>Codigo: ${fornecedor.id}</span>
             <span>Nome: ${fornecedor.nome}</span>
@@ -14,7 +19,7 @@ async function excluirRegistro(selectId) {
             <span>Telefone: ${fornecedor.telefone}</span>
             `;
 
-        let detalhesEndereco = `
+            let detalhesEndereco = `
             <p>Endereço</p>
             <span>CEP: ${fornecedor.endereco.cep}</span>
             <span>Cidade: ${fornecedor.endereco.cidade}</span>
@@ -23,20 +28,23 @@ async function excluirRegistro(selectId) {
             <span>Numero: ${fornecedor.endereco.numero}</span>
             `;
 
-        let img_profile = `<img src="/static${fornecedor.diretorio_img}" alt="" width=25% >`;
+            let img_profile = `<img src="/static${fornecedor.diretorio_img}" alt="" width=25% >`;
 
-        // Exibe os detalhes no modal
-        document.getElementById('detalhesFornecedor').innerHTML = detalhesFornecedor;
-        document.getElementById('detalhesEndereco').innerHTML = detalhesEndereco;
-        document.getElementById('img_profile').innerHTML = img_profile;
+            // Exibe os detalhes no modal
+            document.getElementById('detalhesFornecedor').innerHTML = detalhesFornecedor;
+            document.getElementById('detalhesEndereco').innerHTML = detalhesEndereco;
+            document.getElementById('img_profile').innerHTML = img_profile;
 
-        // Exibe o modal
-        var modal = document.getElementById('modalExcluir');
-        modal.style.display = "block";
+            // Exibe o modal
+            var modal = document.getElementById('modalExcluir');
+            modal.style.display = "block";
 
-    } else {
-        console.log("Fornecedor não encontrado.");
-    }
+        } else {
+            console.log("Fornecedor não encontrado.");
+        }
+    } catch (error) {
+        console.error('Erro ao buscar fornecedor: ', error);
+    }   
 
     // Aplica o efeito de desfoque ao mainContent
     document.getElementById('modal-content').classList.add('blur');

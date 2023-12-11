@@ -6,7 +6,7 @@ from src.sql.config.database import get_session
 from sqlalchemy.orm import Session
 from typing import List, Optional
 
-from src.schemas.FornecedorSchema import FornecedorSchema, FornecedorSchemaDelete, FornecedorSchemaFilterName
+from src.schemas.FornecedorSchema import FornecedorSchema, FornecedorSchemaDelete, FornecedorSchemaFilterName, FornecedorSchemaId
 
 from src.repository.FornecedorRepo import FornecedorRepo
 
@@ -27,9 +27,9 @@ def exibir_form(request: Request, filtro_nome: Optional[str]= None, session: Ses
     return templates.TemplateResponse("fornecedor/listagem.html", {"request": request, "titulo": titulo_pagina})
 
 
-@router.get('/listar/obter-por-id', response_model=FornecedorSchema)
-def get_all_fornecedores(request: Request, session: Session = Depends(get_session)):
-    fornecedores = FornecedorRepo(session).Listar()
+@router.post('/listar/obter-por-id', response_model=FornecedorSchema)
+def get_all_fornecedores(request: Request, fornecedor_id: FornecedorSchemaId ,session: Session = Depends(get_session)):
+    fornecedores = FornecedorRepo(session).ObterPorID(fornecedor_id)
     return fornecedores
 
 @router.post('/listar/pornome', response_model=List[FornecedorSchema])
