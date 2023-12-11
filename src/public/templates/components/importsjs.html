@@ -24,7 +24,8 @@
 <!--Requisitar o JS para funcionamento do modal-->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="{{ url_for('static', path='js/fornecedor/listarFornecedor.js') }}"></script>
-<script src="{{ url_for('static', path='js/fornecedor/modal.js') }}"></script>
+<script src="{{ url_for('static', path='js/fornecedor/modalExcluir.js') }}"></script>
+<script src="{{ url_for('static', path='js/fornecedor/modalEditar.js') }}"></script>
 {% endif %}
 
 {% if request.path == '/fornecedor/cadastrar' %}

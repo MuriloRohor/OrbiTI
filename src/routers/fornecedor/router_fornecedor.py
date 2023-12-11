@@ -15,6 +15,11 @@ router = APIRouter()
 
 IMAGES_DIR='src/public/static/img/logo_fornecedor/'
 
+@router.get("/")
+def get_fornecedor(request: Request):
+    titulo_pagina = "Fornecedor"
+    return templates.TemplateResponse("fornecedor/main.html", {"request": request, "titulo": titulo_pagina})
+
 @router.get("/cadastrar")
 def get_cadastro_fornecedores(request: Request):
     titulo_pagina = "Cadastro Fornecedor"

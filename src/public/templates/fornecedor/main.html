@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% set current_page = "fornecedor" %}
+{% block content %}
+<div class="btn-main">
+    <a href="cadastrar">Cadastrar Fornecedor</a>
+    <a href="listar">
+        <img src="{{ url_for('static', path='img/forms/icon_list.png') }}" alt="">
+    </a>
+</div>
+{% endblock %}

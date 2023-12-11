@@ -1,0 +1,67 @@
+<div id="modalEditar" class="modal">
+    <div class="modal-content-edit">
+        <span class="closeEdit">&times;</span>
+        <div class="header-modal">
+            <h2 class="title_modal">Edição Fornecedor</h2>
+            <span id="img_profile_edit"></span>
+        </div>
+        <div class="detalhes-modal">
+            <form action="http://localhost:8000/fornecedor/criar" method="post" enctype="multipart/form-data"
+                class="form-main">
+                <div class="form-left">
+                    <div>
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="inputNome" name="nome" placeholder="Nome do fornecedor"
+                                autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="inputEmail" name="email" placeholder="Ex: email@email.com.br"
+                                autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="cnpj">CNPJ</label>
+                            <input type="number" id="inputCnpj" name="cnpj" placeholder="cnpj do fornecedor"
+                                autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="text" id="inputTelefone" name="telefone" placeholder="28999999999"
+                                autocomplete="off">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-right">
+                    <div>
+                        <div class="form-group">
+                            <label for="cep">CEP</label>
+                            <input type="number" id="inputCep" name="cep" placeholder="12345678" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" id="inputCidade" name="cidade" placeholder="Cidade" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="logradouro">Logradouro</label>
+                            <input type="text" id="inputLogradouro" name="logradouro" placeholder="Logradouro"
+                                autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="bairro">Bairro</label>
+                            <input type="text" id="inputBairro" name="bairro" placeholder="Bairro" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="numero">Numero</label>
+                            <input type="text" id="inputNumero" name="numero" placeholder="nº 123" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="btn-modal">
+            <button id="confirmarEdicao">Confirmar</button>
+        </div>
+    </div>
+</div>

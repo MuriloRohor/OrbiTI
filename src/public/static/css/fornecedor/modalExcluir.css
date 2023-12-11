@@ -1,25 +1,14 @@
 .modal {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
-    /*padding-top: ;*/
-    
-
 }
 
 .modal-content {
@@ -27,15 +16,11 @@
     flex-direction: column;
     background-color: #fefefe;
     margin: 5% auto;
-    /* 5% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     border: none;
-    
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     width: 1000px;
-    
-    /* Could be more or less, depending on screen size */
 }
 
 .header-modal {
@@ -51,25 +36,21 @@
 }
 
 #img_profile {
-    /* Estilos para o span que conterá a imagem */
     display: flex;
-    /* Para alinhamento */
     align-items: center;
-    /* Alinha verticalmente a imagem */
+    
 }
 
 #img_profile img {
     max-height: 100px;
-    /* Ajuste conforme necessário */
-    /* Ajuste conforme necessário */
     width: auto;
-    padding: 10px;
-    /* Mantém a proporção da imagem */
-    border-radius: 100%;
+    border-radius: 50%;
+    border: none;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
 
 .detalhes-modal {
-    /* Estilos para os detalhes, se necessário */
     display: flex;
     justify-content: space-between;
     /* Fornecedor à esquerda, Endereço à direita */
@@ -83,16 +64,24 @@
     flex: 1;
     padding: 10px;
     border: solid 1px
-    /* Espaçamento interno */
+}
+
+.btn-modal{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 #confirmarExclusao {
-    max-width: 200px;
-    /* Ou a largura que você achar melhor */
-    margin: 20px auto;
-    /* Isso centralizará o botão */
-    display: block;
-    /* Isso faz com que 'margin: auto' funcione */
+    font-size: 19px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 7rem;
+    height: 2rem;
+    color: white;
+    background-color: black;
+    border: none;
+    cursor: pointer;
 }
 
 
@@ -117,6 +106,6 @@
 }
 
 /* Efeito de desfoque */
-.blur {
+.blurEdit {
     filter: blur(8px);
 }

@@ -1,0 +1,132 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content-edit {
+    display: flex;
+    flex-direction: column;
+    background-color: #e4dfdf;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border: none;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    width: 1000px;
+}
+
+.title_modal {
+    align-self: start;
+    margin: 0;
+}
+
+#img_profile_edit {
+    display: flex;
+    align-self: center;
+    
+}
+
+#img_profile_edit img {
+    max-height: 100px;
+    width: auto;
+    border-radius: 100%;
+    border: none;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#confirmarEdicao {
+    font-size: 19px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 7rem;
+    height: 2rem;
+    color: white;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.form-main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    /* Espaço entre os campos do formulário */
+}
+
+
+.form-left>div,
+.form-right>div {
+    flex-basis: calc(50% - 20px);
+    /* Define a largura inicial de cada coluna menos o gap */
+    display: flex;
+    flex-direction: column;
+}
+
+.file-upload {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.form-group input {
+    width: 30rem;
+    height: 2rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    transition: box-shadow 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.form-group label {
+    font-size: 22px;
+}
+
+.form-group input:focus {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    outline: none;
+}
+
+
+/* Botão para fechar o modal */
+.closeEdit {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    justify-content: start;
+}
+
+.closeEdit:hover,
+.closeEdit:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Efeito de desfoque */
+.blur {
+    filter: blur(8px);
+}

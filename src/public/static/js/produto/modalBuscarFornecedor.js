@@ -4,7 +4,7 @@ var paginaAtual = 1;
 function buscarFornecedores(pagina) {
     var nome = document.getElementById('inputNomeFornecedor').value;
 
-    axios.post('http://localhost:8000/fornecedor/listagem/pornome', {
+    axios.post('http://localhost:8000/fornecedor/listar/pornome', {
         nome: nome,
         pagina: pagina
     })
