@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 from typing import List
 from src.repository.ProdutoRepo import ProdutoRepo
 
-from src.schemas.ProdutoSchema import ProdutoSchema, ProdutoSchemaFilterName
+from src.schemas.ProdutoSchema import ProdutoSchema, ProdutoSchemaFilterName, ProdutoSchemaId
 
 from src.sql.config.database import get_session
 
@@ -84,4 +84,9 @@ async def produto_cadastrar_post(
 @router.post('/listar/pornome', response_model=List[ProdutoSchema])
 def get_filterbyname_produtos(request: Request, filtro: ProdutoSchemaFilterName, session: Session = Depends(get_session)):
     produtos = ProdutoRepo(session).FiltrandoPorNome(filtro.nome, filtro.pagina)
+    return produtos
+
+@router.post('/listar/obter-por-id', response_model=ProdutoSchema)
+def get_all_produtos(request: Request, produto_id: ProdutoSchemaId, session: Session = Depends(get_session)):
+    produtos = ProdutoRepo(session).ObterPorID(produto_id)
     return produtos

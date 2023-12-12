@@ -1,4 +1,5 @@
 from sqlalchemy.orm import Session
+from src.schemas.ProdutoSchema import ProdutoSchemaId
 from src.sql.models.models import Categoria, Fornecedor, Produto
 
 class ProdutoRepo():
@@ -40,3 +41,8 @@ class ProdutoRepo():
                                       .all()
         return db_produtos
     
+    def ObterPorID(self, produto: ProdutoSchemaId):
+        db_produto = self.session.query(Produto)\
+                                    .filter(Produto.id == produto.id)\
+                                    .first()
+        return db_produto

@@ -28,3 +28,11 @@ class ProdutoSchemaFilterName(BaseModel):
     class Config:
         orm_mode = True
         from_attributes = True
+
+
+class ProdutoSchemaId(BaseModel):
+    id: int
+
+    class Config:
+        orm_mode = True
+        from_attributes = True
