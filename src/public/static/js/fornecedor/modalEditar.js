@@ -33,45 +33,31 @@ async function editarRegistro(selectId) {
         }
     } catch (error) {
         console.error('Erro ao buscar fornecedor: ', error);
-    }   
+    }
 
     // Aplica o efeito de desfoque ao mainContent
-    document.getElementById('modal-content').classList.add('blur');
+    document.getElementById('modal-content-edit').classList.add('blur');
 }
 
-document.getElementById('confirmarEdicao').addEventListener('click', async function () {
-    // Obtenha o ID do fornecedor e o ID do endereço
-    const fornecedorId = fornecedor.id;
-    const enderecoId = fornecedor.endereco.id;
+async function confirmarEdit() {
 
-    const data = {
-        id: fornecedorId,
+    console.log("função chamada")
+    const formulario = document.getElementById('formFornecedor');
 
-        endereco_id: enderecoId
-    };
+    formulario.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const dadosDoFormulario = new FormData(formulario);
+        const fornecedor = Object.fromEntries(dadosDoFormulario.entries());
 
-    const url = 'http://localhost:8000/fornecedor/listar/editar';
-
-    try {
-        // Envie a solicitação HTTP para editar o fornecedor usando o Axios
-        const response = await axios.delete(url, { data });
-
-        if (response.status === 200) {
-            // A exclusão foi bem-sucedida
-            alert('Fornecedor excluído com sucesso.');
-            // Feche o modal
-            var modalEdit = document.getElementById('modalEditar');
-            modalEdit.style.display = "none";
-            document.getElementById('modal-content-edit').classList.remove('blur');
-            // Recarregue ou atualize a lista de fornecedores, se necessário
-        } else {
-            // Algo deu errado ao excluir
-            alert('Erro ao excluir o fornecedor.');
-        }
-    } catch (error) {
-        alert('Erro ao processar a solicitação:', error);
-    }
-});
+        axios.put('http://localhost:8000/fornecedor/listar/editar', fornecedor)
+            .then(function (response) {
+                console.log('Fornecedor Alterado:', response);
+            })
+            .catch(function (error) {
+                console.error('Erro ao enviar o formulário:', error);
+            });
+    });
+};
 
 // Fechar o modal
 var spanEdit = document.getElementsByClassName("closeEdit")[0];

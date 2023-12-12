@@ -1,4 +1,4 @@
-from sqlalchemy import delete, select
+from sqlalchemy import delete, select, update
 from sqlalchemy.orm import Session
 from src.sql.models.models import Endereco, Fornecedor
 from src.schemas.FornecedorSchema import FornecedorSchema, FornecedorSchemaDelete, FornecedorSchemaId
@@ -73,6 +73,37 @@ class FornecedorRepo():
                                     .filter(Fornecedor.id == fornecedor.id)\
                                     .first()
         return db_fornecedor
+    
+    def UpdatePorID(self, fornecedor: FornecedorSchema):
+        db_fornecedor = update(Fornecedor)\
+                        .where(Fornecedor.id == fornecedor.id)\
+                        .values(
+                            nome=fornecedor.nome, 
+                            email=fornecedor.email,
+                            cnpj=fornecedor.cnpj, 
+                            telefone=fornecedor.telefone,
+                            diretorio_img=fornecedor.diretorio_img,
+                            endereco_id=fornecedor.endereco_id
+                            )
+        db_endereco = update(Endereco)\
+                      .where(Endereco.id == fornecedor.endereco_id)\
+                      .values(
+                            cep=fornecedor.endereco.cep, 
+                            cidade=fornecedor.endereco.cidade, 
+                            logradouro=fornecedor.endereco.logradouro, 
+                            bairro=fornecedor.endereco.bairro, 
+                            numero=fornecedor.endereco.numero
+                            )
+        
+        self.session.execute(db_endereco)
+        self.session.execute(db_fornecedor)
+        self.session.commit()
+
+        db_fornecedor_alterado = self.session.query(Fornecedor)\
+                                              .filter(Fornecedor.id == fornecedor.id)\
+                                              .first()
+        
+        return db_fornecedor_alterado
     
     def DeletarPorID(self, fornecedor: FornecedorSchemaDelete):
         try:

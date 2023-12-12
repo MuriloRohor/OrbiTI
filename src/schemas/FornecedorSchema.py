@@ -18,6 +18,20 @@ class FornecedorSchema(BaseModel):
         orm_mode = True
         from_attributes=True
 
+
+class FornecedorSchemaUpdate(BaseModel):
+    id: Optional[int] = None
+    nome: str
+    email: str
+    cnpj: int
+    telefone: int
+    endereco_id: int
+    endereco: Optional[EnderecoSchema] = None
+
+    class Config:
+        orm_mode = True
+        from_attributes=True
+
 class FornecedorSchemaId(BaseModel):
     id: int
     class Config:

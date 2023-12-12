@@ -6,7 +6,7 @@
             <span id="img_profile_edit"></span>
         </div>
         <div class="detalhes-modal">
-            <form action="http://localhost:8000/fornecedor/criar" method="post" enctype="multipart/form-data"
+            <form action="http://localhost:8000/fornecedor/listar/editar" id="formFornecedor" enctype="multipart/form-data"
                 class="form-main">
                 <div class="form-left">
                     <div>
@@ -61,7 +61,7 @@
             </form>
         </div>
         <div class="btn-modal">
-            <button id="confirmarEdicao">Confirmar</button>
+            <button type="submit" id="confirmarEdicao" onclick="confirmarEdit()">Confirmar</button>
         </div>
     </div>
 </div>

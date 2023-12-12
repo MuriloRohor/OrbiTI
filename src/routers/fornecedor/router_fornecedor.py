@@ -6,7 +6,7 @@ from src.sql.config.database import get_session
 from sqlalchemy.orm import Session
 from typing import List, Optional
 
-from src.schemas.FornecedorSchema import FornecedorSchema, FornecedorSchemaDelete, FornecedorSchemaFilterName, FornecedorSchemaId
+from src.schemas.FornecedorSchema import FornecedorSchema, FornecedorSchemaDelete, FornecedorSchemaFilterName, FornecedorSchemaId, FornecedorSchemaUpdate
 
 from src.repository.FornecedorRepo import FornecedorRepo
 
@@ -28,7 +28,6 @@ def get_cadastro_fornecedores(request: Request):
 @router.get("/listar")
 def exibir_form(request: Request, filtro_nome: Optional[str]= None, session: Session = Depends(get_session)):
     titulo_pagina = "Listagem Fornecedor"
-    
     return templates.TemplateResponse("fornecedor/listagem.html", {"request": request, "titulo": titulo_pagina})
 
 
@@ -47,8 +46,10 @@ def delete_for_id_fornecedor(request: Request, fornecedor: FornecedorSchemaDelet
     FornecedorRepo(session).DeletarPorID(fornecedor)
     return "Produto Deletado"
 
-
-
+@router.put('/listar/editar', response_model=FornecedorSchemaUpdate)
+def edit_for_id_fornecedor(request: Request, fornecedor: FornecedorSchemaUpdate, session: Session = Depends(get_session)):
+    fornecedor = FornecedorRepo(session).UpdatePorID(fornecedor)
+    return fornecedor
 
 @router.post("/criar")
 async def create_fornecedor(
