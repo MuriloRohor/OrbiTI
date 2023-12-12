@@ -2,9 +2,9 @@ from pydantic import BaseModel
 from typing import Optional
 
 from .FornecedorSchema import FornecedorSchema
-from .CategoriaSchema import CategoriaOut
+from .CategoriaSchema import CategoriaSchema
 
-class ProdutoOut(BaseModel):
+class ProdutoSchema(BaseModel):
     id: Optional[int] = None
     nome: str
     marca: str
@@ -12,8 +12,18 @@ class ProdutoOut(BaseModel):
     diretorio_img: str
     categoria_id: int
     fornecedor_id: int
-    categoria: Optional[CategoriaOut] = None
+    categoria: Optional[CategoriaSchema] = None
     fornecedor: Optional[FornecedorSchema] = None
+
+    class Config:
+        orm_mode = True
+        from_attributes = True
+
+
+
+class ProdutoSchemaFilterName(BaseModel):
+    nome: str
+    pagina: str
 
     class Config:
         orm_mode = True

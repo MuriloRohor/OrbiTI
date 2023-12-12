@@ -39,4 +39,12 @@
 <link rel="stylesheet" href="/static/css/crud_test.css">
 {% endif %}
 
+{% if request.path == '/produto/listar' %}
+<!--Requisitar o CSS para Estilização da listagem dos fornecedores-->
+<link rel="stylesheet" href="/static/css/listagemfornecedor.css">
+<link rel="stylesheet" href="/static/css/produto/modalExcluir.css">
+<link rel="stylesheet" href="/static/css/produto/modalEditar.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+{% endif %}
+
 

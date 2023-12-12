@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% set current_page = "fornecedor" %}
+{% block content %}
+<form class="filter-nome" id="formBuscarFornecedor">
+    <input type="text" id="inputNomeFornecedor" name="filtro_nome" placeholder="Nome do Fornecedor" autocomplete="off">
+    <input type="submit" value="Buscar">
+</form>
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
+                <table>
+                    <thead>
+                        <tr class="table100-head">
+                            <th class="column1">Codigo</th>
+                            <th class="column2">Nome</th>
+                            <th class="column3">Marca</th>
+                            <th class="column4">Categoria</th>
+                            <th class="column5">Fornecedor</th>
+                            <th class="column6">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="infoFornecedorTabela">
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pagination">
+    <button id="btnPaginaAnteriorListagemProduto" disabled>Anterior</button>
+    <span id="infoPaginaListagemProduto">Página 1</span>
+    <button id="btnProximaPaginaListagemProduto">Próxima</button>
+</div>
+{% include 'produto/modalExcluir.html' %}
+{% include 'produto/modalEditar.html' %}
+{% endblock %}

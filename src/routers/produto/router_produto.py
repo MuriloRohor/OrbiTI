@@ -36,7 +36,7 @@ def produto_excluir(request: Request):
 @router.get('/listar', response_class=HTMLResponse)
 def produto_listar(request: Request):
     titulo_page = "Listar Produto"
-    return templates.TemplateResponse("produto/listar.html", {"request": request, "titulo": titulo_page})
+    return templates.TemplateResponse("produto/listagem.html", {"request": request, "titulo": titulo_page})
 
 @router.post('/cadastrar', response_class=RedirectResponse)
 async def produto_cadastrar_post(
@@ -77,3 +77,9 @@ async def produto_cadastrar_post(
     except Exception as e:
         session.rollback()
         raise HTTPException(status_code=400, detail=str(e))
+    
+
+@router.post('/listar/pornome', response_model=List[ProdutoSchema])
+def get_filterbyname_fornecedores(requst: Request, filtro: ProdutoSchemaFilterName, session: Session = Depends(get_session)):
+    fornecedores = FornecedorRepo(session).FiltrandoPorNome(filtro.nome, filtro.pagina)
+    return fornecedores
