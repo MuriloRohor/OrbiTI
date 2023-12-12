@@ -1,9 +1,10 @@
+from typing import List, Optional
 from sqlalchemy.orm import Session
 from src.sql.models.models import PermissaoUsuario, Endereco, Usuario
 
 class UsuarioRepo():
     
-    def __init__(self, session) -> None:
+    def __init__(self, session: Session) -> None:
         self.session = session
 
     def Criar(
@@ -22,7 +23,7 @@ class UsuarioRepo():
         senha: str,
         token: str,
         permissao_id: int
-        ):
+        )  -> Optional[Usuario]:
         
         db_endereco = Endereco(
             cep=cep, 
@@ -53,17 +54,39 @@ class UsuarioRepo():
 
         return db_usuario
     
-    def Listar(self): 
+    
+    def Listar(self) -> Optional[List[Usuario]]: 
         db_usuarios = self.session.query(Usuario).all()
         return db_usuarios
     
-    def FiltrandoPorNome(self, filtro_nome: str):
+    
+    def FiltrandoPorNome(self, filtro_nome: str) -> Optional[List[Usuario]]:
         db_usuarios = self.session.query(Usuario).filter(Usuario.nome.contains(filtro_nome)).all()
         return db_usuarios
     
-    def ObterUsuarioPorToken(self, token):
+    
+    def ObterPorToken(self, token: str) -> Optional[Usuario]:
         db_usuario = self.session.query(Usuario)\
                                  .filter(Usuario.token == token)\
-                                 .all()
+                                 .first()
         return db_usuario
+    
+
+    def ObterPorEmail(self, email: str) -> Optional[Usuario]:
+        db_usuario = self.session.query(Usuario)\
+                                 .filter(Usuario.email == email)\
+                                 .first()
+        return db_usuario
+    
+    def ObterSenhaPorEmail(self, email: str) -> Optional[str]:
+        db_usuario = self.session.query(Usuario)\
+                                 .filter(Usuario.email == email)\
+                                 .first()
+        return db_usuario.senha
+    
+    def VerificarExisteEmail(self, email: str) -> bool or False:
+        db_usuario = self.session.query(Usuario)\
+                                 .filter(Usuario.email == email)\
+                                 .first()
+        return db_usuario is not None
 
