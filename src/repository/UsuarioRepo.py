@@ -20,6 +20,7 @@ class UsuarioRepo():
         cargo: str,
         login: str,
         senha: str,
+        token: str,
         permissao_id: int
         ):
         
@@ -59,4 +60,10 @@ class UsuarioRepo():
     def FiltrandoPorNome(self, filtro_nome: str):
         db_usuarios = self.session.query(Usuario).filter(Usuario.nome.contains(filtro_nome)).all()
         return db_usuarios
+    
+    def ObterUsuarioPorToken(self, token):
+        db_usuario = self.session.query(Usuario)\
+                                 .filter(Usuario.token == token)\
+                                 .all()
+        return db_usuario
 

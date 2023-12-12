@@ -9,10 +9,20 @@ templates = Jinja2Templates(directory="src/public/templates")
 router = APIRouter()
 
 
-@router.get("/", response_class=HTMLResponse)
+@router.get("/")
+def root(request: Request):
+    return RedirectResponse(url="/login", status_code=302)
+
+@router.get("/login", response_class=HTMLResponse)
 def login_page(request: Request):
     return templates.TemplateResponse("login.html", {"request": request})
 
+
+
+
+
+
+"""
 @router.post("/", response_class=HTMLResponse)
 def get_form(usuario: Annotated[str, Form()], senha: Annotated[str, Form()]):
     print(usuario, senha)
@@ -21,11 +31,7 @@ def get_form(usuario: Annotated[str, Form()], senha: Annotated[str, Form()]):
         time.sleep(5)
     return RedirectResponse(url="/menu/", status_code=status.HTTP_302_FOUND)
 
-
-
-
-
-
+"""
 """
 @router_page.get("/", response_class=HTMLResponse)
 def menu_page(request: Request):
