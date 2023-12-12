@@ -1,7 +1,7 @@
 from sqlalchemy import delete, select, update
 from sqlalchemy.orm import Session
 from src.sql.models.models import Endereco, Fornecedor
-from src.schemas.FornecedorSchema import FornecedorSchema, FornecedorSchemaDelete, FornecedorSchemaId
+from src.schemas.FornecedorSchema import FornecedorSchema, FornecedorSchemaDelete, FornecedorSchemaId, FornecedorSchemaUpdate
 
 
 class FornecedorRepo():
@@ -74,7 +74,7 @@ class FornecedorRepo():
                                     .first()
         return db_fornecedor
     
-    def UpdatePorID(self, fornecedor: FornecedorSchema):
+    def UpdatePorID(self, fornecedor: FornecedorSchemaUpdate):
         db_fornecedor = update(Fornecedor)\
                         .where(Fornecedor.id == fornecedor.id)\
                         .values(
@@ -82,7 +82,6 @@ class FornecedorRepo():
                             email=fornecedor.email,
                             cnpj=fornecedor.cnpj, 
                             telefone=fornecedor.telefone,
-                            diretorio_img=fornecedor.diretorio_img,
                             endereco_id=fornecedor.endereco_id
                             )
         db_endereco = update(Endereco)\

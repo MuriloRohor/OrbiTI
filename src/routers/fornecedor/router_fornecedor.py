@@ -44,12 +44,12 @@ def get_filterbyname_fornecedores(requst: Request, filtro: FornecedorSchemaFilte
 @router.delete('/listar/delete')
 def delete_for_id_fornecedor(request: Request, fornecedor: FornecedorSchemaDelete, session: Session = Depends(get_session)):
     FornecedorRepo(session).DeletarPorID(fornecedor)
-    return "Produto Deletado"
+    return "Fornecedor Deletado"
 
-@router.put('/listar/editar', response_model=FornecedorSchemaUpdate)
+@router.put('/listar/editar')
 def edit_for_id_fornecedor(request: Request, fornecedor: FornecedorSchemaUpdate, session: Session = Depends(get_session)):
-    fornecedor = FornecedorRepo(session).UpdatePorID(fornecedor)
-    return fornecedor
+    FornecedorRepo(session).UpdatePorID(fornecedor)
+    return "Fornecedor Alterado"
 
 @router.post("/criar")
 async def create_fornecedor(
@@ -100,11 +100,7 @@ async def create_fornecedor(
     except Exception as e:
         session.rollback()
         raise HTTPException(status_code=400, detail=str(e))
-    
 
-@router.delete('/fornecedor')
-def delete_fornecedor():
-    pass
 
     
 

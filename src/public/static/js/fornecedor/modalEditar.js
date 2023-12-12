@@ -28,6 +28,50 @@ async function editarRegistro(selectId) {
             var modal = document.getElementById('modalEditar');
             modal.style.display = "block";
 
+            document.getElementById('confirmarEdicao').addEventListener('click', function () {
+
+                const nome = document.getElementById('inputNome').value;
+                const email = document.getElementById('inputEmail').value;
+                const cnpj = document.getElementById('inputCnpj').value
+                const telefone = document.getElementById('inputTelefone').value;
+                const cep = document.getElementById('inputCep').value;
+                const cidade = document.getElementById('inputCidade').value;
+                const logradouro = document.getElementById('inputLogradouro').value;
+                const bairro = document.getElementById('inputBairro').value;
+                const numero = document.getElementById('inputNumero').value;
+
+                // Criar um objeto com os dados
+                const dadosDoFormulario = {
+                    id: fornecedor.id,
+                    nome: nome,
+                    email: email,
+                    cnpj: cnpj,
+                    telefone: telefone,
+                    endereco_id: fornecedor.endereco.id,
+                    endereco: {
+                        cep: cep,
+                        cidade: cidade,
+                        logradouro: logradouro,
+                        bairro: bairro,
+                        numero: numero
+                    }
+                };
+                axios.put('http://localhost:8000/fornecedor/listar/editar', dadosDoFormulario)
+                    .then(function (response) {
+                        console.log('Resposta recebida:', response);
+
+                        // Feche o modal aqui
+                        // Feche o modal aqui
+                        var modalEdit = document.getElementById('modalEditar');
+                        modalEdit.style.display = "none";
+                        document.getElementById('modal-content-edit').classList.remove('blur');
+                    })
+                    .catch(function (error) {
+                        console.error('Erro ao enviar o formulário:', error);
+                    });
+
+            });
+
         } else {
             console.log("Fornecedor não encontrado.");
         }
@@ -37,27 +81,9 @@ async function editarRegistro(selectId) {
 
     // Aplica o efeito de desfoque ao mainContent
     document.getElementById('modal-content-edit').classList.add('blur');
+
 }
 
-async function confirmarEdit() {
-
-    console.log("função chamada")
-    const formulario = document.getElementById('formFornecedor');
-
-    formulario.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const dadosDoFormulario = new FormData(formulario);
-        const fornecedor = Object.fromEntries(dadosDoFormulario.entries());
-
-        axios.put('http://localhost:8000/fornecedor/listar/editar', fornecedor)
-            .then(function (response) {
-                console.log('Fornecedor Alterado:', response);
-            })
-            .catch(function (error) {
-                console.error('Erro ao enviar o formulário:', error);
-            });
-    });
-};
 
 // Fechar o modal
 var spanEdit = document.getElementsByClassName("closeEdit")[0];
