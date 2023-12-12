@@ -1,6 +1,9 @@
-from fastapi import Request, APIRouter
+from fastapi import Depends, Request, APIRouter
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
+from src.sql.models.UsuarioModel import Usuario
+
+from src.util.security import obter_usuario_logado
 
 
 templates = Jinja2Templates(directory="src/public/templates")
@@ -8,7 +11,7 @@ router = APIRouter()
 
 
 @router.get("/", response_class=HTMLResponse)
-def menu_main(request: Request):
+def menu_main(request: Request,):
     titulo_pagina = "Menu"
     return templates.TemplateResponse("menu/main.html", {"request": request, "titulo": titulo_pagina})
 

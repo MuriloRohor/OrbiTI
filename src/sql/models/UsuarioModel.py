@@ -16,9 +16,7 @@ class Usuario(Base):
     login: Mapped[str]
     senha: Mapped[str]
     token: Mapped[str]
+    admin: Mapped[bool]
     endereco_id: Mapped[int] = mapped_column(ForeignKey('enderecos.id'))
-    permissao_id: Mapped[int] = mapped_column(ForeignKey('permisao_usuarios.id'))
-
     endereco = relationship("Endereco", back_populates="usuario", uselist=False)
-    permissao_usuario = relationship("PermissaoUsuario", back_populates="usuario", uselist=False)
 

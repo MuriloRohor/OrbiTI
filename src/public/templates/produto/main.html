@@ -2,9 +2,9 @@
 {% set current_page = "produto" %}
 {% block content %}
 <div class="btn-main">
-    <a class="btn-1 button" href="cadastrar">Cadastrar</a>
-    <a class="btn-2 button" href="editar">Editar</a>
-    <a class="btn-3 button" href="excluir">Excluir</a>
-    <a class="btn-4 button" href="listar">Listar</a>
+    <a href="cadastrar">Cadastrar produto</a>
+    <a href="listar">
+        <img src="{{ url_for('static', path='img/forms/icon_list.png') }}" alt="">
+    </a>
 </div>
 {% endblock %}

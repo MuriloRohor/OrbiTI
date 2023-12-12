@@ -13,7 +13,7 @@ from src.repository.FornecedorRepo import FornecedorRepo
 templates = Jinja2Templates(directory="src/public/templates")
 router = APIRouter()
 
-IMAGES_DIR='src/public/static/img/logo_fornecedor/'
+IMAGES_DIR_FORNECEDOR='src/public/static/img/logo_fornecedor/'
 
 @router.get("/")
 def get_fornecedor(request: Request):
@@ -26,7 +26,7 @@ def get_cadastro_fornecedores(request: Request):
     return templates.TemplateResponse("fornecedor/cadastrar.html", {"request": request, "titulo": titulo_pagina})
 
 @router.get("/listar")
-def exibir_form(request: Request, filtro_nome: Optional[str]= None, session: Session = Depends(get_session)):
+def exibir_form(request: Request):
     titulo_pagina = "Listagem Fornecedor"
     return templates.TemplateResponse("fornecedor/listagem.html", {"request": request, "titulo": titulo_pagina})
 
@@ -73,7 +73,7 @@ async def create_fornecedor(
 
     # salvando imagem
 
-    with open(f"{IMAGES_DIR}{img.filename}", "wb") as f:
+    with open(f"{IMAGES_DIR_FORNECEDOR}{img.filename}", "wb") as f:
         f.write(contents)
 
     db_IMAGES_DIR ="/img/logo_fornecedor/"

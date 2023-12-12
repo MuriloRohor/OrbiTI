@@ -1,6 +1,7 @@
 from typing import List, Optional
+from sqlalchemy import update
 from sqlalchemy.orm import Session
-from src.sql.models.models import PermissaoUsuario, Endereco, Usuario
+from src.sql.models.models import Endereco, Usuario
 
 class UsuarioRepo():
     
@@ -19,10 +20,11 @@ class UsuarioRepo():
         data_nascimento: str,
         cpf: int,
         cargo: str,
+        email: str,
         login: str,
         senha: str,
         token: str,
-        permissao_id: int
+        admin: bool
         )  -> Optional[Usuario]:
         
         db_endereco = Endereco(
@@ -43,10 +45,12 @@ class UsuarioRepo():
             data_nascimento=data_nascimento,
             cpf=cpf,
             cargo=cargo,
+            email=email,
             login=login,
             senha=senha,
+            token=token,
             endereco_id=usuario_endereco_id,
-            permissao_id=permissao_id
+            admin=admin
         )
 
         self.session.add(db_usuario)
@@ -83,6 +87,15 @@ class UsuarioRepo():
                                  .filter(Usuario.email == email)\
                                  .first()
         return db_usuario.senha
+    
+    def AlterarTokenPorEmail(self, token: str, email: str):
+        db_usuario = update(Usuario)\
+                     .where(Usuario.email == email)\
+                     .values(
+                        token=token
+                        )
+        self.session.execute(db_usuario)
+        self.session.commit()
     
     def VerificarExisteEmail(self, email: str) -> bool or False:
         db_usuario = self.session.query(Usuario)\

@@ -11,6 +11,7 @@ class ProdutoRepo():
         nome: str,
         marca: str,
         descricao: str,
+        diretorio_img: str,
         categoria_id: int,
         fornecedor_id: int
         ):
@@ -18,6 +19,7 @@ class ProdutoRepo():
             nome=nome,
             marca=marca,
             descricao=descricao,
+            diretorio_img=diretorio_img,
             categoria_id=categoria_id,
             fornecedor_id=fornecedor_id
         )

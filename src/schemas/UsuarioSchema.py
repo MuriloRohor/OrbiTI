@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from typing import Optional
 
-from .EnderecoSchema import EnderecoOut
+from .EnderecoSchema import EnderecoSchema
 from .PermissaoUsuarioSchema import PermissaoUsuarioOut
 
 class UsuarioOut(BaseModel):
@@ -13,10 +13,10 @@ class UsuarioOut(BaseModel):
     cargo: str
     login: str
     senha: str
+    admin: bool
     endereco_id: int
-    permissao_id: id
     permissao: Optional[PermissaoUsuarioOut] = None
-    endereco: Optional[EnderecoOut] = None
+    endereco: Optional[EnderecoSchema] = None
 
     class Config:
         orm_mode = True

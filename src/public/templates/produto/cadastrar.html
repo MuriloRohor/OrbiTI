@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% set current_page = "produto" %}
 {% block content %}
-<form action="" class="form-main" method="post">
+<form class="form-main" method="post" enctype="multipart/form-data">
     <div class="file-upload">
         <img id="image-preview" src="{{ url_for('static', path='/img/forms/icon_upload.svg') }}" alt="">
         <input type="file" name="img" id="real-file" accept="image/png, image/jpeg">

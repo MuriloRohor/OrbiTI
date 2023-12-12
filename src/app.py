@@ -1,6 +1,8 @@
-from fastapi import FastAPI, Request
+import uvicorn
+from fastapi import Depends, FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+
 
 from src.routers.login.router_login import router as router_login
 from src.routers.menu.router_menu import router as router_menu
@@ -10,9 +12,17 @@ from src.routers.relatorio.router_relatorio import router as router_relatorio
 from src.routers.solicitacao.router_solicitacao import router as router_solicitacao
 from src.routers.fornecedor.router_fornecedor import router as router_fornecedor
 from src.routers.categoria.router_categoria import router as router_categoria
-import uvicorn
+from src.util.init_user import init_user
+
+
+from src.util.security import atualizar_cookie_autenticacao
+
+
+init_user()
+
 
 app = FastAPI()
+app.middleware("http")(atualizar_cookie_autenticacao)
 
 app.mount("/static", StaticFiles(directory="src/public/static"), name="static")
 
