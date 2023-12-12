@@ -37,7 +37,7 @@ def conferir_senha(senha: str, hash_senha: str) -> bool:
         return False
     
 
-def gerar_toke(length: int = 32) -> str:
+def gerar_token(length: int = 32) -> str:
     try: 
         return secrets.token_hex(length)
     
