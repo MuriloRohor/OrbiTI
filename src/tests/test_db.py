@@ -1,6 +1,6 @@
 from sqlalchemy import select
 
-from src.sql.models.models import Endereco, Fornecedor, Local, Categoria, Produto, PermissaoUsuario, Usuario
+from src.sql.models.models import Endereco, Fornecedor, Local, Categoria, Produto, Usuario
 
 # Teste da criação da tabela Endereços
 def test_create_endereco(session):
@@ -188,19 +188,6 @@ def test_create_user(session):
         )
     )
 
-    new_permissao_for_usuario = PermissaoUsuario(
-        nome="Administrador",
-        descricao="teste",
-        
-    )
-    session.add(new_permissao_for_usuario)     
-    session.commit()
-    permissao_id = new_permissao_for_usuario.id
-    permissao = session.scalar(                   
-        select(PermissaoUsuario).where(
-            PermissaoUsuario.nome == "Administrador"
-        )
-    )
 
     new_user = Usuario(
         nome="joao",
@@ -211,8 +198,10 @@ def test_create_user(session):
         email="user@email.com",
         login="user",
         senha="secret",
-        endereco_id=endereco_id,
-        permissao_id=permissao_id
+        token="4y5haiefhth43t4h489fhew9fh44tg56g5g",
+        admin=False,
+        endereco_id=endereco_id
+        
     )
     session.add(new_user)     
     session.commit()
@@ -221,15 +210,14 @@ def test_create_user(session):
             Usuario.endereco_id == endereco_id
         )
     )
-    usuario_check_perm = session.scalar(
+    usuario_check_admin = session.scalar(
         select(Usuario).where(
-            Usuario.permissao_id == permissao_id
+            Usuario.admin == False
         )
     )
-    
+
     assert endereco.cidade == "Alto Pongal"
-    assert permissao.nome == "Administrador"
     assert usuario_check_ende.endereco_id == endereco_id
-    assert usuario_check_perm.permissao_id == permissao_id
+    assert usuario_check_admin.admin == False
 
     
