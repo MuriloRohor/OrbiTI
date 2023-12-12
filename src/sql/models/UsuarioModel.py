@@ -15,6 +15,7 @@ class Usuario(Base):
     email: Mapped[str]
     login: Mapped[str]
     senha: Mapped[str]
+    token: Mapped[str]
     endereco_id: Mapped[int] = mapped_column(ForeignKey('enderecos.id'))
     permissao_id: Mapped[int] = mapped_column(ForeignKey('permisao_usuarios.id'))
 
