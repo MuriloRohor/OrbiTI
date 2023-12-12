@@ -31,7 +31,12 @@ class ProdutoRepo():
         db_produtos = self.session.query(Produto).all()
         return db_produtos
     
-    def FiltrandoPorNome(self, filtro_nome: str):
-        db_produtos = self.session.query(Produto).filter(Produto.nome.contains(filtro_nome)).all()
+    def FiltrandoPorNome(self, filtro_nome: str, pagina_atual: int, itens_por_pagina=10):
+        offset = (pagina_atual - 1) * itens_por_pagina
+        db_produtos = self.session.query(Produto)\
+                                      .filter(Produto.nome.contains(filtro_nome))\
+                                      .limit(itens_por_pagina)\
+                                      .offset(offset)\
+                                      .all()
         return db_produtos
     

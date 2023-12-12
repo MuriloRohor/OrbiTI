@@ -17,7 +17,7 @@ function getProdutos(pagina) {
                         <td class="column2">${produto.nome}</td>
                         <td class="column3">${produto.marca}</td>
                         <td class="column4">${produto.categoria.nome}</td>
-                        <td class="column5">${produto.categoria.fornecedor}</td>
+                        <td class="column5">${produto.fornecedor.nome}</td>
                         <td class="column5"><button class="btn-list" onclick="editarRegistro(${produto.id})"><img src="http://localhost:8000/static/img/forms/icon_edit.png" alt=""></button>
                         <button class="btn-list" onclick="excluirRegistro(${produto.id})"><img src="http://localhost:8000/static/img/forms/icon_lixeira.png"" alt=""></button>
                         </td>

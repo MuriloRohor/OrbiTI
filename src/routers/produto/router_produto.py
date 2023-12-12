@@ -6,6 +6,8 @@ from sqlalchemy.orm import Session
 from typing import List
 from src.repository.ProdutoRepo import ProdutoRepo
 
+from src.schemas.ProdutoSchema import ProdutoSchema, ProdutoSchemaFilterName
+
 from src.sql.config.database import get_session
 
 templates = Jinja2Templates(directory="src/public/templates")
@@ -80,6 +82,6 @@ async def produto_cadastrar_post(
     
 
 @router.post('/listar/pornome', response_model=List[ProdutoSchema])
-def get_filterbyname_fornecedores(requst: Request, filtro: ProdutoSchemaFilterName, session: Session = Depends(get_session)):
-    fornecedores = FornecedorRepo(session).FiltrandoPorNome(filtro.nome, filtro.pagina)
-    return fornecedores
+def get_filterbyname_produtos(request: Request, filtro: ProdutoSchemaFilterName, session: Session = Depends(get_session)):
+    produtos = ProdutoRepo(session).FiltrandoPorNome(filtro.nome, filtro.pagina)
+    return produtos

@@ -23,7 +23,7 @@ class ProdutoSchema(BaseModel):
 
 class ProdutoSchemaFilterName(BaseModel):
     nome: str
-    pagina: str
+    pagina: int
 
     class Config:
         orm_mode = True
